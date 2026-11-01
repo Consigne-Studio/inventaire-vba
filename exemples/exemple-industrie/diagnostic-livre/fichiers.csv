@@ -1,0 +1,31 @@
+﻿Priorité;Chemin;Dossier;Application;Extension;Lignes de code;Modules;Procédures;Declare;Signature;Fin du certificat;Protégé;Règles;Constats;Objets COM;Auteur;Dernier auteur;Modifié;Correction VBA (h);Office Scripts;Office Scripts (j);Réécriture (j);Cible de réécriture;LibreOffice;Copie / famille
+P2;Exemple-Industrie/Achats/2025/Commandes fournisseurs v2.xlsm;Exemple-Industrie/Achats;excel;xlsm;37;4;6;0;aucune;;;IE-001 SEC-002;2;InternetExplorer.Application MSXML2.XMLHTTP;;;2025-09-03;5.5;non adapté;;1.5;Python;à réécrire;F01
+P2;Exemple-Industrie/Achats/Commandes fournisseurs - Copie.xlsm;Exemple-Industrie/Achats;excel;xlsm;37;4;6;0;aucune;;;IE-001 SEC-002;2;InternetExplorer.Application MSXML2.XMLHTTP;;;2025-05-20;5.5;non adapté;;1.5;Python;à réécrire;C01
+P2;Exemple-Industrie/Achats/Commandes fournisseurs.xlsm;Exemple-Industrie/Achats;excel;xlsm;37;4;6;0;aucune;;;IE-001 SEC-002;2;InternetExplorer.Application MSXML2.XMLHTTP;;;2025-05-20;5.5;non adapté;;1.5;Python;à réécrire;C01
+P3;Exemple-Industrie/Archives/Ancien budget protégé.xlsm;Exemple-Industrie/Archives;excel;xlsm;0;0;0;0;aucune;;;FMT-002;1;;;;2025-03-23;0;adapté;0.5;1;Python;probable;
+;Exemple-Industrie/Commun/Calculatrice TVA.xlsm;Exemple-Industrie/Commun;excel;xlsm;7;1;2;0;aucune;;;;0;;;;2023-01-10;0;adapté;0.5;1;Python;probable;C02
+P2;Exemple-Industrie/Commun/Macros/ExportPDF.bas;Exemple-Industrie/Commun;module;bas;7;1;1;2;aucune;;;B64-002;2;;;;2021-04-25;1.5;non adapté;;1;Python;à réécrire;
+P2;Exemple-Industrie/Commun/Macros/OutilsCommuns.xlam;Exemple-Industrie/Commun;excel;xlam;14;2;2;4;V3;2028-06-01;;VBS-004;1;;;;2025-10-01;1.5;non adapté;;1;Python;à réécrire;
+P1;Exemple-Industrie/Commun/Macros/Rapport qualité.xlsm;Exemple-Industrie/Commun;excel;xlsm;7;1;2;0;agile;2027-01-31;;SIG-001 REF-001 SIG-003;3;;;;2024-03-08;2;adapté;0.5;1;Python;probable;C02
+P1;Exemple-Industrie/Comptabilité/Relances clients.xlsm;Exemple-Industrie/Comptabilité;excel;xlsm;24;1;1;0;aucune;;;MEL-001;1;CDO.Configuration CDO.Message;;;2025-03-14;2;partiel;0.5;1;Python;à réécrire;
+P1;Exemple-Industrie/Direction/Indicateurs mensuels.xlsm;Exemple-Industrie/Direction;excel;xlsm;26;3;4;2;aucune;;oui;B64-001 DDE-001 OUT-001 XLM-001 CHM-001 PRJ-001 SEC-003;8;Outlook.Application;;;2025-06-30;9.75;non adapté;;1.5;Python;à réécrire;
+P1;Exemple-Industrie/Finance/Anciens/Tableau de bord 2017.xls;Exemple-Industrie/Finance;excel;xls;17;2;3;2;aucune;;;B64-001 CHM-001 FMT-001;5;;;;2023-06-15;2;non adapté;;1;Python;à réécrire;
+P1;Exemple-Industrie/Finance/Budget/Suivi budgétaire 2024.xlsm;Exemple-Industrie/Finance;excel;xlsm;26;3;4;2;ancienne;2024-12-31;;B64-001 SIG-001 OUT-001 SIG-002 CHM-001 SEC-003;8;Outlook.Application;;;2024-11-04;4.75;non adapté;;1.5;Python;à réécrire;
+P1;Exemple-Industrie/Finance/Calcul des primes.xlsm;Exemple-Industrie/Finance;excel;xlsm;19;2;3;2;aucune;;;B64-001 VBS-003;3;MSScriptControl.ScriptControl;;;2019-05-02;4.5;non adapté;;1;Python;à réécrire;
+P2;Exemple-Industrie/Finance/Rapprochement bancaire.xlsm;Exemple-Industrie/Finance;excel;xlsm;24;3;3;0;aucune;;;VBS-001 CNX-001 SEC-003;5;ADODB.Connection VBScript.RegExp;;;2025-02-17;3.75;partiel;0.5;3;application web;à réécrire;
+P1;Exemple-Industrie/Production/Applications/BancTest/BancTest.vbp;Exemple-Industrie/Production;vb6;vbp;52;4;7;2;aucune;;;VB6-010 OUT-001 CHM-001 VB6-002 VB6-001 VB6-004;6;Outlook.Application;;;2021-06-14;10.25;non adapté;;2.5;C# .NET;sans objet;
+P1;Exemple-Industrie/Production/Arrêts machines.xlsm;Exemple-Industrie/Production;excel;xlsm;4;1;1;0;aucune;;;B64-003;1;;;;2021-01-15;5;non adapté;;1;Python;à réécrire;
+P2;Exemple-Industrie/Production/Copie abîmée.xlsm;Exemple-Industrie/Production;excel;xlsm;0;0;0;0;aucune;;;FMT-003;1;;;;2021-08-03;1.25;adapté;0.5;1;Python;probable;
+P2;Exemple-Industrie/Production/Relevés capteurs ligne 2.xls;Exemple-Industrie/Production;excel;xls;8;1;1;0;aucune;;;DDE-001 XLM-002 FMT-001;5;;;;2023-06-15;5;non adapté;;1;Python;à adapter;
+P1;Exemple-Industrie/Production/Suivi des ordres de fabrication.xlsm;Exemple-Industrie/Production;excel;xlsm;20;4;4;0;aucune;;;B64-004 VBS-002 ACX-001 CHM-001 CNX-001 SEC-001 SEC-003;11;ADODB.Connection;;;2024-06-28;7.75;non adapté;;3;application web;à réécrire;
+P3;Exemple-Industrie/Qualité/Base des non-conformités.accdb;Exemple-Industrie/Qualité;access;accdb;0;0;0;0;aucune;;;ACC-001;1;;;;2022-10-13;0;non adapté;;1;application web;à réécrire;
+P2;Exemple-Industrie/Qualité/Export Access/modAlertes.bas;Exemple-Industrie/Qualité;module;bas;5;1;1;0;aucune;;;OUT-002;1;;;;2025-01-07;2;non adapté;;1;Python;probable;
+P4;Exemple-Industrie/RH/Modèles/Attestation employeur.doc;Exemple-Industrie/RH;word;doc;10;2;3;0;aucune;;;FMT-001 SEC-003;2;;;;2023-06-15;0.25;non adapté;;1;Python;probable;F02
+P2;Exemple-Industrie/RH/Modèles/Courrier type.docm;Exemple-Industrie/RH;word;docm;13;2;2;0;aucune;;;OUT-001 CHM-001 SEC-003;4;Outlook.Application;;;2022-03-01;4;non adapté;;1;Python;à réécrire;
+P1;Exemple-Industrie/RH/Planning des congés.xlsm;Exemple-Industrie/RH;excel;xlsm;22;3;4;4;aucune;;oui;B64-003 CHM-001 PRJ-001;5;;;;2023-09-12;6.75;non adapté;;2.5;application web;à réécrire;
+P1;Exemple-Industrie/Scripts/connexion.vbs;Exemple-Industrie/Scripts;script;vbs;2;1;0;0;aucune;;;VBS-010 CHM-001;2;WScript.Network;;;2025-12-26;3.25;non adapté;;1;Python;à réécrire;
+P1;Exemple-Industrie/Scripts/sauvegarde_nuit.vbs;Exemple-Industrie/Scripts;script;vbs;2;1;0;0;aucune;;;VBS-010 CHM-001;2;Scripting.FileSystemObject;;;2021-05-06;3.25;non adapté;;1;Python;à réécrire;
+P1;Exemple-Industrie/Téléchargements/Facture_2024_0172.docm;Exemple-Industrie/Téléchargements;word;docm;7;1;1;1;aucune;;;SEC-010 SEC-001 SEC-002 SEC-003;5;;;;2024-12-02;;à isoler;;;à isoler (SEC-010);à isoler;
+P1;Exemple-Industrie/Informatique/Outils/Relances/App.config;Exemple-Industrie/Informatique;config;config;0;0;0;0;aucune;;;MEL-001;1;;;;2023-05-09;2;non adapté;;0;sans objet;sans objet;
+P1;Exemple-Industrie/Informatique/Outils/Relances/Envoi.cs;Exemple-Industrie/Informatique;dotnet;cs;0;0;0;0;aucune;;;MEL-001;1;;;;2021-07-22;2;non adapté;;0;sans objet;sans objet;
+P2;Exemple-Industrie/Informatique/Outils/Relances/Relances.csproj;Exemple-Industrie/Informatique;dotnet;csproj;0;0;0;0;aucune;;;OUT-001;1;;;;2024-10-16;3;non adapté;;0;sans objet;sans objet;

@@ -1,0 +1,544 @@
+<title>Inventaire des macros VBA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Inventaire hors ligne des macros VBA et des applications VB6 d'un parc : ce qui casse avec Office 64 bits, les signatures V3, le nouvel Outlook, la fin du SMTP par mot de passe, ActiveX et VBScript, fichier par fichier. Outil gratuit, licence de parc, diagnostic et remédiation à distance.">
+<style>
+/* Mise en page : une planche d'ingénieur. Bandeaux pleine largeur, contenu sur une grille de 16 px,
+   cartouche et cotes comme vocabulaire ; une seule couleur de signal (vert marche) : la bulle DEV-607. */
+@font-face{font-family:Archivo;src:url(__ARCHIVO__) format('woff2');font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:'Martian Mono';src:url(__MARTIAN__) format('woff2');font-weight:100 800;font-stretch:75% 112.5%;font-display:swap}
+@font-face{font-family:Atkinson;src:url(__ATKINSON__) format('woff2');font-weight:200 800;font-display:swap}
+:root{
+  --fond:#D4D7DA; --papier:#F3F4F5; --encre:#1B1E21; --secondaire:#5C636A; --filet:#1B1E21; --carter:#9AA0A6;
+  --trame:rgba(27,30,33,.075); --signal:#2BB673; --sur-signal:#1B1E21; --inverse-fond:#1B1E21; --inverse-encre:#F3F4F5;
+  --f-titre:Archivo,'Arial Narrow',sans-serif; --f-data:'Martian Mono',ui-monospace,Menlo,monospace; --f-texte:Atkinson,system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --fond:#1B1E21; --papier:#2A2F34; --encre:#F3F4F5; --secondaire:#AEB4BA; --filet:#C9CED3; --carter:#4A5158;
+  --trame:rgba(255,255,255,.045); --inverse-fond:#F3F4F5; --inverse-encre:#1B1E21; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --fond:#1B1E21; --papier:#2A2F34; --encre:#F3F4F5; --secondaire:#AEB4BA; --filet:#C9CED3; --carter:#4A5158;
+  --trame:rgba(255,255,255,.045); --inverse-fond:#F3F4F5; --inverse-encre:#1B1E21; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--fond);color:var(--encre);font:17px/1.55 var(--f-texte);-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--trame) 1px,transparent 1px),linear-gradient(90deg,var(--trame) 1px,transparent 1px);background-size:16px 16px}
+.bande{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.int{max-width:1120px;margin:0 auto}
+.titre{font-family:var(--f-titre);font-weight:800;font-stretch:62%;text-transform:uppercase;line-height:.94;letter-spacing:-.005em;text-wrap:balance;margin:0}
+.data{font-family:var(--f-data);font-stretch:87.5%;font-weight:500;text-transform:uppercase;letter-spacing:.07em;font-variant-numeric:tabular-nums}
+p{margin:0;max-width:62ch}
+a{color:inherit}
+code{font-family:var(--f-data);font-stretch:87.5%;font-size:.86em}
+:focus-visible{outline:2px solid var(--encre);outline-offset:3px}
+
+/* En-tête */
+.entete{padding-block:20px;border-bottom:1.5px solid var(--filet)}
+.entete .int{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.marque{display:flex;align-items:flex-end;gap:10px;text-decoration:none}
+.marque .titre{font-size:30px;line-height:.78}
+.entete nav{display:flex;gap:20px;flex-wrap:wrap;font-size:11px}
+.entete nav a{text-decoration:none}
+.entete nav a:hover{text-decoration:underline}
+
+/* Ouverture */
+.ouverture{padding-block:56px 64px}
+.ouverture .int{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:start}
+.reperes{display:flex;gap:16px;align-items:center;margin-bottom:28px}
+.reperes .data{font-size:11px;line-height:1.7;color:var(--secondaire)}
+.ouverture h1{font-size:clamp(64px,10vw,124px)}
+.ouverture .acc{font-size:clamp(19px,2.1vw,23px);line-height:1.4;margin:28px 0 32px;font-weight:500}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border:1.5px solid var(--filet);text-decoration:none;font:600 15px var(--f-texte);cursor:pointer;background:none;color:inherit}
+.btn.plein{background:var(--inverse-fond);color:var(--inverse-encre);border-color:var(--inverse-fond)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:2px 2px 0 var(--filet)}
+@media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+.specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1.5px solid var(--filet);border-bottom:1.5px solid var(--filet);margin-top:40px}
+.specs>div{padding:12px 0 12px 12px;min-width:0}
+.specs>div:first-child{padding-left:0}
+.specs>div+div{border-left:1px solid var(--filet)}
+.specs .titre{font-size:40px}
+.specs .data{font-size:9.5px;margin-top:6px;color:var(--secondaire)}
+.planche-doc{position:relative;padding:0 0 36px 30px}
+.planche-doc img{display:block;width:100%;height:auto;border:1.5px solid var(--filet)}
+.cote{position:absolute;font-size:10px}
+.cote.h{left:30px;right:0;bottom:6px;height:16px;border-left:1px solid var(--filet);border-right:1px solid var(--filet)}
+.cote.h::before{content:"";position:absolute;left:0;right:0;top:8px;border-top:1px solid var(--filet)}
+.cote.v{left:4px;top:0;bottom:36px;width:16px;border-top:1px solid var(--filet);border-bottom:1px solid var(--filet)}
+.cote.v::before{content:"";position:absolute;top:0;bottom:0;left:8px;border-left:1px solid var(--filet)}
+.cote span{position:absolute;background:var(--fond);padding:0 6px;white-space:nowrap}
+.cote.h span{left:50%;top:1px;transform:translateX(-50%)}
+.cote.v span{top:50%;left:8px;transform:translate(-50%,-50%) rotate(-90deg)}
+.legende-doc{font-size:10px;color:var(--secondaire);margin-top:10px}
+
+/* Sections */
+section.bloc{padding-block:64px;border-top:1.5px solid var(--filet)}
+.tete-bloc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px;align-items:end;margin-bottom:40px}
+.tete-bloc h2{font-size:clamp(40px,5.4vw,64px)}
+.tete-bloc p{color:var(--secondaire)}
+.folio{display:inline-block;font-size:10px;border:1.5px solid var(--filet);padding:3px 7px;margin-bottom:14px}
+
+/* Échéancier de support */
+.echeancier{background:var(--papier);border:1.5px solid var(--filet);overflow-x:auto}
+.echeancier table{width:100%;border-collapse:collapse;min-width:620px}
+.echeancier th,.echeancier td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--carter);vertical-align:top}
+.echeancier th{font:500 10px var(--f-data);font-stretch:87.5%;letter-spacing:.07em;text-transform:uppercase;color:var(--secondaire);border-bottom:1.5px solid var(--filet)}
+.echeancier tr:last-child td{border-bottom:0}
+.echeancier .v{font-family:var(--f-titre);font-weight:800;font-stretch:62%;font-size:30px;line-height:1}
+.etat{display:inline-block;font:600 10px var(--f-data);font-stretch:87.5%;letter-spacing:.06em;text-transform:uppercase;padding:4px 7px;border:1px solid var(--filet)}
+.etat.hors{background:var(--inverse-fond);color:var(--inverse-encre);border-color:var(--inverse-fond)}
+.etat.fin{border-width:2.5px}
+.etat.lts{border-style:solid}
+.etat.actif{border-style:dashed}
+.note{font-size:13px;color:var(--secondaire);margin-top:14px}
+
+/* Déroulé */
+.etapes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1.5px solid var(--filet)}
+.etape{padding:20px 20px 24px 0;min-width:0}
+.etape+.etape{border-left:1px solid var(--filet);padding-left:20px}
+.etape .n{font-family:var(--f-titre);font-weight:800;font-stretch:62%;font-size:56px;line-height:1}
+.etape h3{font:700 18px/1.3 var(--f-texte);margin:12px 0 8px}
+.etape p{font-size:15px;color:var(--secondaire)}
+.cmd{display:flex;margin-top:28px;border:1.5px solid var(--filet);background:var(--inverse-fond);color:var(--inverse-encre);max-width:100%}
+.cmd code{flex:1;min-width:0;padding:16px 18px;font-size:15px;overflow-x:auto;white-space:nowrap}
+.cmd button{border:0;border-left:1.5px solid var(--inverse-encre);background:none;color:inherit;padding:0 18px;font:600 11px var(--f-data);font-stretch:87.5%;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}
+
+/* Axes */
+.axes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0;border-top:1.5px solid var(--filet);border-left:1.5px solid var(--filet)}
+.axe{padding:22px 22px 26px;border-right:1.5px solid var(--filet);border-bottom:1.5px solid var(--filet);background:var(--papier);min-width:0}
+.axe .data{font-size:10px;color:var(--secondaire)}
+.axe h3{font:800 26px/1 var(--f-titre);font-stretch:62%;text-transform:uppercase;margin:10px 0 12px}
+.axe ul{margin:0;padding:0;list-style:none;font-size:14.5px;display:grid;gap:6px}
+.axe li{padding-left:16px;position:relative}
+.axe li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1.5px;background:var(--encre)}
+
+/* Exemple */
+.pages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.pages figure{margin:0;min-width:0}
+.pages img{display:block;width:100%;height:auto;border:1.5px solid var(--filet)}
+.pages figcaption{font-size:10px;margin-top:8px;color:var(--secondaire)}
+.chiffres-ex{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;align-items:center}
+
+/* Tarifs */
+.tarifs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1.5px solid var(--filet);background:var(--papier)}
+.formule{padding:26px 24px 28px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.formule+.formule{border-left:1.5px solid var(--filet)}
+.formule .nom{font-size:11px}
+.formule .prix{font-family:var(--f-titre);font-weight:800;font-stretch:62%;font-size:64px;line-height:.9}
+.formule .prix small{font:500 12px var(--f-data);font-stretch:87.5%;letter-spacing:.05em;margin-left:4px}
+.formule .pour{font-size:15px;color:var(--secondaire);min-height:3.1em}
+.formule dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:13px;border-top:1px solid var(--carter);border-bottom:1px solid var(--carter);padding:10px 0}
+.formule dt{font:500 10px/1.9 var(--f-data);font-stretch:87.5%;letter-spacing:.06em;text-transform:uppercase;color:var(--secondaire)}
+.formule dd{margin:0;text-align:right;font-weight:600}
+.formule ul{margin:0;padding:0;list-style:none;font-size:14.5px;display:grid;gap:7px;flex:1}
+.formule li{padding-left:20px;position:relative}
+.formule li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:5px;border-left:1.5px solid var(--encre);border-bottom:1.5px solid var(--encre);transform:rotate(-45deg)}
+.formule li.plus{font-weight:600}
+.formule li.plus::before{display:none}
+.formule .btn{justify-content:center}
+.conditions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:28px;font-size:14px}
+.conditions>div{min-width:0}
+.conditions h3{font:500 10px var(--f-data);font-stretch:87.5%;letter-spacing:.07em;text-transform:uppercase;margin:0 0 6px}
+
+/* Confidentialité */
+.secret{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}
+.flux{background:var(--papier);border:1.5px solid var(--filet);padding:22px;font-size:14px;align-self:start}
+.flux svg{display:block;width:100%;height:auto}
+.liste-garanties{display:grid;gap:16px;margin:0;padding:0;list-style:none}
+.liste-garanties li{border-top:1px solid var(--filet);padding-top:12px}
+.liste-garanties b{display:block;font-size:17px;margin-bottom:2px}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.faq details{border-top:1px solid var(--filet);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font:500 18px var(--f-data)}
+.faq details[open] summary::after{content:"−"}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{margin-top:10px;font-size:15px;color:var(--secondaire)}
+
+/* Pied */
+.pied{padding-block:40px 56px;border-top:1.5px solid var(--filet)}
+.pied .int{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-end}
+.cartouche{border:1.5px solid var(--filet);background:var(--papier);display:grid;grid-template-columns:2fr 1fr 1fr;min-width:0;max-width:100%}
+.cartouche>div{padding:6px 10px 8px;min-width:0}
+.cartouche>div+div{border-left:1px solid var(--filet)}
+.cartouche .k{font-size:8.5px;color:var(--secondaire)}
+.cartouche .v{font-size:12px;margin-top:3px;white-space:nowrap}
+.mentions{font-size:12.5px;color:var(--secondaire);max-width:60ch;display:grid;gap:6px}
+.mentions a{color:inherit;text-underline-offset:3px}
+.mentions a,.cgv-lien a{color:inherit;text-underline-offset:3px}
+.cgv-lien{margin:24px 0 0;font-size:14px;max-width:70ch}
+
+@media (max-width:900px){
+  .ouverture .int,.tete-bloc,.secret{grid-template-columns:1fr}
+  .planche-doc{max-width:460px}
+  .etapes{grid-template-columns:1fr 1fr}
+  .etape:nth-child(3){border-left:0;padding-left:0}
+  .etape:nth-child(n+3){border-top:1px solid var(--filet)}
+  .tarifs{grid-template-columns:1fr}
+  .formule+.formule{border-left:0;border-top:1.5px solid var(--filet)}
+  .formule .pour{min-height:0}
+  .pages{grid-template-columns:1fr 1fr}
+  .conditions,.faq{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .specs{grid-template-columns:1fr 1fr}
+  .specs>div:nth-child(3){border-left:0;padding-left:0}
+  .specs>div:nth-child(n+3){border-top:1px solid var(--filet)}
+  .etapes{grid-template-columns:1fr}
+  .etape+.etape{border-left:0;padding-left:0;border-top:1px solid var(--filet)}
+  .entete nav{display:none}
+  .cartouche{grid-template-columns:1fr 1fr}
+  .cartouche>div:first-child{grid-column:1/-1}
+  .cartouche>div:nth-child(2){border-left:0;border-top:1px solid var(--filet)}
+  .cartouche>div:nth-child(3){border-top:1px solid var(--filet)}
+}
+
+/* Propre à DEV-607 */
+.ouverture h1{font-size:clamp(52px,7.2vw,92px)}
+.tarifs.deux{grid-template-columns:repeat(2,minmax(0,1fr))}
+.groupe-tarifs+.groupe-tarifs{margin-top:40px}
+.groupe-tarifs>h3{font:500 11px var(--f-data);font-stretch:87.5%;letter-spacing:.07em;text-transform:uppercase;margin:0 0 12px}
+.formule .prix.zero{font-size:64px}
+.echeancier td.n{font-family:var(--f-titre);font-weight:800;font-stretch:62%;font-size:30px;line-height:1;text-align:right;white-space:nowrap}
+.echeancier th.n{text-align:right}
+.echeancier td b{display:block;font-size:16px;margin-bottom:2px}
+.echeancier td.q{white-space:nowrap;font:600 11px/1.8 var(--f-data);font-stretch:87.5%;letter-spacing:.05em;text-transform:uppercase}
+.vue-ecran{border:1.5px solid var(--filet);display:block;width:100%;height:auto}
+.duo{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px;align-items:start}
+.formats{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.formats span{font:500 11px var(--f-data);font-stretch:87.5%;letter-spacing:.05em;padding:4px 7px;border:1px solid var(--filet);background:var(--papier)}
+@media (max-width:900px){.tarifs.deux{grid-template-columns:1fr}.duo{grid-template-columns:1fr}}
+@media (max-width:640px){.echeancier table{min-width:0}.echeancier thead{display:none}.echeancier tr{display:block;padding:14px 16px;border-bottom:1px solid var(--carter)}.echeancier tr:last-child{border-bottom:0}.echeancier td{display:block;padding:3px 0;border:0}.echeancier td:last-child{color:var(--secondaire);font-size:14px}}
+</style>
+
+<header class="bande entete">
+  <div class="int">
+    <a class="marque" href="#haut" aria-label="Consigne">
+      <svg width="48" height="27" viewBox="0 0 48 27" aria-hidden="true"><rect x="0" y="19" width="48" height="8" fill="var(--carter)"/><rect x="11.5" y="19" width="22" height="8" fill="var(--encre)"/><path d="M33 0h14l-7 17z" fill="var(--encre)"/><rect x="39.2" y="17" width="1.6" height="10" fill="var(--encre)"/></svg>
+      <span class="titre">Consigne</span>
+    </a>
+    <nav class="data" aria-label="Sections">
+      <a href="#echeances">Échéances</a><a href="#exemple">Rapport d'exemple</a><a href="#courriels">Courriels</a><a href="#tarifs">Tarifs</a><a href="#diagnostic">Diagnostic</a><a href="#faq">Questions</a>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+  <div class="bande ouverture">
+    <div class="int">
+      <div>
+        <div class="reperes">
+          <svg width="88" height="88" viewBox="0 0 88 88" role="img" aria-label="Repère DEV-607"><circle cx="44" cy="44" r="42.8" fill="var(--signal)" stroke="var(--sur-signal)" stroke-width="2.4"/><line x1="1.2" y1="44" x2="86.8" y2="44" stroke="var(--sur-signal)" stroke-width="2.4"/><text x="44" y="36" text-anchor="middle" font-family="Archivo" font-stretch="62%" font-weight="800" font-size="26" fill="var(--sur-signal)">DEV</text><text x="44" y="67" text-anchor="middle" font-family="Martian Mono" font-stretch="87.5%" font-weight="500" font-size="17" fill="var(--sur-signal)">607</text></svg>
+          <div class="data">Inventaire hors ligne<br>Excel · Word · PowerPoint · Access · VB6</div>
+        </div>
+        <h1 class="titre">Vos macros VBA tiendront-elles en&nbsp;2027&nbsp;?</h1>
+        <p class="acc">Un outil Windows lit les fichiers Office de vos partages et liste, fichier par fichier, ce qui casse avec Office 64 bits, les signatures V3, le nouvel Outlook, la fin du SMTP par mot de passe, ActiveX et VBScript. Il lit aussi vos applications Visual Basic 6. Rien n'est exécuté, rien n'est envoyé.</p>
+        <div class="actions">
+          <a class="btn plein" href="https://github.com/Consigne-Studio/inventaire-vba/releases/latest">Télécharger l'édition gratuite</a>
+          <a class="btn" href="#exemple">Voir un rapport d'exemple</a>
+        </div>
+        <div class="specs">
+          <div><div class="titre">39</div><div class="data">règles vérifiées</div></div>
+          <div><div class="titre">0</div><div class="data">macro exécutée</div></div>
+          <div><div class="titre">0</div><div class="data">octet envoyé</div></div>
+          <div><div class="titre">490&nbsp;€</div><div class="data">HT, licence de parc</div></div>
+        </div>
+      </div>
+      <figure class="planche-doc" style="margin:0">
+        <img src="__IMG_DIAG_P1__" width="911" height="1288" alt="Première page d'un rapport de diagnostic : bulle DEV-607, titre Macros VBA du parc, cartouche, synthèse rédigée par l'expert : 24 fichiers avec du VBA, une application VB6, 15 fichiers qui cassent, environ 15 jours de correction.">
+        <div class="cote h data" aria-hidden="true"><span>A4 · 210 mm</span></div>
+        <div class="cote v data" aria-hidden="true"><span>13 folios</span></div>
+        <figcaption class="legende-doc data">Diagnostic livré, parc fictif de 47 fichiers</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section class="bande bloc" id="echeances" aria-labelledby="t-echeances">
+    <div class="int">
+      <div class="tete-bloc">
+        <div><span class="folio data">Échéances</span><h2 class="titre" id="t-echeances">Ce qui casse, et&nbsp;quand</h2></div>
+        <p>Microsoft retire une à une les briques sur lesquelles reposent vingt ans de macros, et a retiré en 2024 son propre outil d'inventaire, le Readiness Toolkit. Chaque ligne du tableau correspond à des règles de l'outil, et chaque règle cite sa source Microsoft dans le rapport.</p>
+      </div>
+      <div class="echeancier">
+        <table>
+          <thead><tr><th>Échéance</th><th>Ce qui casse</th><th>Ce que l'outil repère</th></tr></thead>
+          <tbody>
+            <tr><td class="q">Aujourd'hui</td><td><b>Office 64 bits</b>Installé par défaut depuis Office 2019 et Microsoft 365. Un <code>Declare</code> sans <code>PtrSafe</code> empêche tout le projet de compiler.</td><td>Declare sans PtrSafe, handles en Long, contrôles 32 bits, Jet 4.0 et DAO 3.6</td></tr>
+            <tr><td class="q">Depuis 2025</td><td><b>ActiveX</b>Contrôles ActiveX désactivés par défaut dans Microsoft 365 (version 2504) et Office 2024.</td><td>Contrôles dans les feuilles et les formulaires, par identifiant de classe</td></tr>
+            <tr><td class="q">Stratégie activée</td><td><b>Signatures V3</b>Avec « seulement les macros signées en V3 », une signature ancienne vaut une absence de signature.</td><td>Signature V3 absente, certificat expiré ou qui expire dans moins de 6 mois</td></tr>
+            <tr><td class="q">Fin décembre 2026</td><td><b>SMTP par mot de passe</b>Exchange Online désactive par défaut SMTP AUTH en authentification de base. Les locataires créés en 2027 n'y ont plus accès.</td><td>CDO et <code>SmtpClient</code> vers smtp.office365.com avec un mot de passe, dans le code, les <code>.config</code> et les <code>.ini</code></td></tr>
+            <tr><td class="q">Vers 2026-2027</td><td><b>VBScript</b>Désactivé par défaut dans Windows (phase 2 annoncée). Touche tous les .vbs, les applications VB6 qui s'en servent et <code>VBScript.RegExp</code> hors Microsoft 365 récent.</td><td>RegExp, ScriptControl, appels à wscript et cscript, scripts .vbs du partage, contrôle Script dans VB6</td></tr>
+            <tr><td class="q">Mars 2027</td><td><b>Nouvel Outlook</b>Bascule par défaut en entreprise. Le nouvel Outlook n'a ni VBA ni automatisation COM.</td><td><code>Outlook.Application</code>, bibliothèque Outlook, <code>DoCmd.SendObject</code>, MAPI, CDO 1.21, Redemption, dans les macros, les projets VB6 et .NET</td></tr>
+            <tr><td class="q">Parc mixte</td><td><b>RegExp natif</b>Le RegExp intégré à Microsoft 365 (2508) ne compile pas sur Office 2019, 2021 ou LTSC.</td><td>RegExp natif utilisé sans référence VBScript</td></tr>
+            <tr><td class="q">Déjà fait</td><td><b>Retraits passés</b>Internet Explorer, DDE, macros Excel 4.0 : souvent encore présents dans de vieux classeurs.</td><td>InternetExplorer.Application, liens DDE, feuilles macro XLM</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Aussi vérifiés : références manquantes, chemins et connexions en dur, projets protégés, fichiers chiffrés ou illisibles, et motifs de macro malveillante (téléchargement, exécution de commandes à l'ouverture).</p>
+    </div>
+  </section>
+
+  <section class="bande bloc" id="deroule" aria-labelledby="t-deroule">
+    <div class="int">
+      <div class="tete-bloc">
+        <div><span class="folio data">Déroulé</span><h2 class="titre" id="t-deroule">Un dossier, une commande, un rapport</h2></div>
+        <p>Un exécutable Windows autonome : pas de Node.js, pas de Python, pas de droits d'administrateur avec le zip. Il tourne sur le poste d'un administrateur, à côté des partages.</p>
+      </div>
+      <ol class="etapes" style="list-style:none;margin:0;padding:0">
+        <li class="etape"><div class="n">1</div><h3>Installer</h3><p>Zip à décompresser ou installeur MSI déployable par GPO, Intune ou SCCM.</p></li>
+        <li class="etape"><div class="n">2</div><h3>Choisir un dossier</h3><p>Double-clic sur « Lancer l'inventaire » et choix du partage, ou une ligne de commande pour plusieurs.</p></li>
+        <li class="etape"><div class="n">3</div><h3>Laisser lire</h3><p>Les fichiers sont lus octet par octet, jamais ouverts dans Office ni modifiés. Quelques secondes pour mille fichiers.</p></li>
+        <li class="etape"><div class="n">4</div><h3>Lire le rapport</h3><p>Une page HTML autonome à envoyer ou imprimer, et, en édition parc, un classeur Excel filtrable.</p></li>
+      </ol>
+      <div class="cmd">
+        <code id="commande">inventaire-vba \\serveur\partages --exclure Archives -o C:\Inventaires\2026-10</code>
+        <button type="button" id="copier" aria-describedby="commande">Copier</button>
+      </div>
+      <div class="formats" aria-label="Formats lus"><span>.xlsm</span><span>.xlsb</span><span>.xlam</span><span>.xls</span><span>.docm</span><span>.dotm</span><span>.doc</span><span>.pptm</span><span>.ppam</span><span>.bas · .cls · .frm</span><span>.vbs</span><span>.accdb · .mdb (export fourni)</span><span>.vbp (VB6)</span><span>.cs · .vb · .csproj</span><span>.config · .ini</span></div>
+    </div>
+  </section>
+
+  <section class="bande bloc" id="exemple" aria-labelledby="t-exemple">
+    <div class="int">
+      <div class="tete-bloc">
+        <div><span class="folio data">Exemple</span><h2 class="titre" id="t-exemple">Le rapport, sur un parc d'exemple</h2></div>
+        <p>47 fichiers fictifs d'une entreprise industrielle, répartis dans dix services : vieux tableaux de bord, signatures expirées, scripts de nuit, relances envoyées en SMTP, un banc de test en VB6, une fausse facture piégée. Le rapport complet, le classeur Excel et le diagnostic livré sont publiés avec l'outil.</p>
+      </div>
+      <div class="duo">
+        <figure style="margin:0"><img class="vue-ecran" src="__IMG_REGLES__" width="1200" height="1166" alt="Constats par règle : B64-001 Declare sans PtrSafe ouvert, avec pourquoi, quoi faire, la source Microsoft et chaque emplacement : fichier, module, numéro de ligne et extrait de code."><figcaption class="data legende-doc">Constats par règle, emplacement à la ligne près</figcaption></figure>
+        <div style="display:grid;gap:20px">
+          <figure style="margin:0"><img class="vue-ecran" src="__IMG_ECHEANCES__" width="1200" height="564" alt="Ce qui casse, et quand : 8 fichiers en 64 bits, 1 en ActiveX, 2 en signatures V3, 3 avec la fin du SMTP par mot de passe, 6 en VBScript, 6 avec le nouvel Outlook."><figcaption class="data legende-doc">Fichiers touchés par échéance</figcaption></figure>
+          <figure style="margin:0"><img class="vue-ecran" src="__IMG_ESTIMATION__" width="1200" height="1133" alt="Estimation de migration : 14,9 jours pour corriger en VBA, 6 fichiers portables en Office Scripts, 36 jours pour tout réécrire, et les 15 fichiers les plus coûteux."><figcaption class="data legende-doc">Estimation sur trois chemins (édition parc)</figcaption></figure>
+        </div>
+      </div>
+      <div class="chiffres-ex">
+        <a class="btn" href="https://consigne-studio.github.io/inventaire-vba/exemple/rapport.html">Ouvrir le rapport interactif</a>
+        <span class="data" style="font-size:11px;color:var(--secondaire)">24 fichiers avec du VBA · 1 application VB6 · 15 qui cassent · 1 à isoler · 14,9 jours estimés</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande bloc" id="courriels" aria-labelledby="t-courriels">
+    <div class="int">
+      <div class="tete-bloc">
+        <div><span class="folio data">Courriels</span><h2 class="titre" id="t-courriels">Les envois de courriels, trouvés puis&nbsp;remplacés</h2></div>
+        <p>Relances, alertes, rapports du lundi&nbsp;: les macros qui envoient des courriels cassent deux fois. Le SMTP par mot de passe tombe fin décembre 2026, l'automatisation d'Outlook en mars 2027. Passer de l'un à l'autre ne règle rien.</p>
+      </div>
+      <div class="duo">
+        <figure style="margin:0"><img class="vue-ecran" src="__IMG_COURRIEL__" width="1200" height="__H_COURRIEL__" alt="Section Envoi de courriels du rapport : chaque fichier qui envoie, avec son mécanisme (Outlook, SendObject, CDO vers Office 365 avec mot de passe), la façon dont le message part et la cible recommandée, Microsoft Graph."><figcaption class="data legende-doc">Chaque point d'envoi, son mécanisme et sa cible</figcaption></figure>
+        <ul class="liste-garanties">
+          <li><b>Repérés partout</b>Outlook, <code>DoCmd.SendObject</code>, MAPI, CDO et SMTP, dans les macros, les applications VB6, les outils .NET et leurs fichiers de configuration.</li>
+          <li><b>Un module libre pour les remplacer</b><code>ModGraphMail.bas</code>, sous licence MIT, fourni avec l'outil&nbsp;: une ligne <code>EnvoyerCourriel</code> à la place d'Outlook ou de CDO, en VBA et en VB6, Office 32 et 64 bits, sans DLL.</li>
+          <li><b>Une seule boîte autorisée</b>Microsoft Graph, avec un droit d'envoi limité à une boîte par Exchange Online. Le secret reste dans le Gestionnaire d'identification Windows, jamais dans le code.</li>
+          <li><b>Le guide de l'administrateur</b>Six étapes et 20 minutes dans Entra ID et Exchange Online, commandes PowerShell comprises. <a href="https://consigne-studio.github.io/inventaire-vba/nouvel-outlook-smtp-auth.html">Lire l'article sur les deux échéances</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande bloc" id="tarifs" aria-labelledby="t-tarifs">
+    <div class="int">
+      <div class="tete-bloc">
+        <div><span class="folio data">Tarifs</span><h2 class="titre" id="t-tarifs">L'outil, seul ou avec un expert</h2></div>
+        <p>Prix hors taxes, payés en ligne. L'édition gratuite et le module de remédiation restent gratuits. La licence de parc couvre une organisation entière, sans compter les postes.</p>
+      </div>
+      <div class="groupe-tarifs">
+        <h3>L'outil</h3>
+        <div class="tarifs deux">
+          <div class="formule">
+            <span class="nom data">Édition gratuite · licence MIT</span>
+            <div class="prix">0&nbsp;€</div>
+            <p class="pour">Mesurer un service ou un partage, ou vérifier l'outil avant d'acheter.</p>
+            <dl><dt>Fichiers</dt><dd>200 par inventaire</dd><dt>Postes</dt><dd>illimités</dd><dt>Code source</dt><dd>public</dd></dl>
+            <ul>
+              <li>Les 39 règles, sans exception</li>
+              <li>Rapport HTML autonome et imprimable</li>
+              <li>Inventaire en JSON pour vos propres outils</li>
+              <li>Fichier anonymisé pour un diagnostic</li>
+              <li>Exécutable Windows et installeur MSI</li>
+            </ul>
+            <a class="btn" href="https://github.com/Consigne-Studio/inventaire-vba/releases/latest">Télécharger</a>
+          </div>
+          <div class="formule">
+            <span class="nom data">Licence de parc</span>
+            <div class="prix">490&nbsp;€<small>HT</small></div>
+            <p class="pour">Inventorier tout le parc, chiffrer la migration et suivre la remédiation.</p>
+            <dl><dt>Fichiers</dt><dd>illimités</dd><dt>Organisation</dt><dd>une, postes illimités</dd><dt>Mises à jour</dt><dd>12 mois</dd></dl>
+            <ul>
+              <li class="plus">Tout l'édition gratuite, plus&nbsp;:</li>
+              <li>Classeur Excel en 8 feuilles et exports CSV</li>
+              <li>Estimation : VBA corrigé, Office Scripts, réécriture</li>
+              <li>Répartition par service et par dossier</li>
+              <li>Copies et versions divergentes d'un même outil</li>
+              <li>Comparaison entre deux inventaires</li>
+            </ul>
+            <a class="btn plein" href="https://consignestudio.gumroad.com/l/inventaire-vba">Acheter la licence</a>
+          </div>
+        </div>
+      </div>
+      <div class="groupe-tarifs" id="diagnostic">
+        <h3>Le diagnostic à distance</h3>
+        <div class="tarifs deux">
+          <div class="formule">
+            <span class="nom data">Diagnostic Essentiel</span>
+            <div class="prix">1&nbsp;490&nbsp;€<small>HT</small></div>
+            <p class="pour">Un rapport relu et priorisé à présenter à la direction ou au comité de projet.</p>
+            <dl><dt>Délai</dt><dd>5 jours ouvrés</dd><dt>Taille</dt><dd>jusqu'à 2 000 fichiers</dd><dt>Échanges</dt><dd>par écrit</dd></dl>
+            <ul>
+              <li>Relecture de chaque règle déclenchée</li>
+              <li>Synthèse rédigée pour un décideur</li>
+              <li>Avis d'expert sur chaque constat</li>
+              <li>Plan d'action daté, du plus urgent à ce qui peut attendre</li>
+              <li>Rapport PDF, classeur Excel et CSV</li>
+              <li>Réponses écrites pendant 30 jours</li>
+            </ul>
+            <a class="btn" href="https://consignestudio.gumroad.com/l/diagnostic-vba">Commander l'Essentiel</a>
+          </div>
+          <div class="formule">
+            <span class="nom data">Diagnostic Complet</span>
+            <div class="prix">2&nbsp;900&nbsp;€<small>HT</small></div>
+            <p class="pour">Préparer la bascule d'un grand parc et en suivre l'avancement.</p>
+            <dl><dt>Délai</dt><dd>10 jours ouvrés</dd><dt>Taille</dt><dd>jusqu'à 10 000 fichiers</dd><dt>Échanges</dt><dd>écrit + visio facultative</dd></dl>
+            <ul>
+              <li class="plus">Tout l'Essentiel, plus&nbsp;:</li>
+              <li>Licence de parc incluse (490 € HT)</li>
+              <li>Estimation ajustée fichier par fichier, cible par cible</li>
+              <li>Plan par service, avec les copies à supprimer</li>
+              <li>Second diagnostic de contrôle dans les 6 mois</li>
+              <li>Restitution de 45 minutes en visio, si vous la souhaitez</li>
+            </ul>
+            <a class="btn plein" href="https://consignestudio.gumroad.com/l/diagnostic-vba">Commander le Complet</a>
+          </div>
+        </div>
+      </div>
+      <div class="groupe-tarifs" id="remediation">
+        <h3>La remédiation de l'envoi de courriels</h3>
+        <div class="tarifs deux">
+          <div class="formule">
+            <span class="nom data">Un outil</span>
+            <div class="prix">690&nbsp;€<small>HT</small></div>
+            <p class="pour">Un classeur, une base Access ou un projet VB6 qui doit continuer d'envoyer après 2026.</p>
+            <dl><dt>Délai</dt><dd>5 jours ouvrés</dd><dt>Taille</dt><dd>1 fichier, 3 points d'envoi</dd><dt>Échanges</dt><dd>par écrit</dd></dl>
+            <ul>
+              <li>Chaque envoi passé sur Microsoft Graph</li>
+              <li>Pièces jointes, copies et brouillon à relire conservés</li>
+              <li>Mots de passe retirés du code</li>
+              <li>Commandes de l'administrateur préparées pour votre boîte</li>
+              <li>Fichier corrigé, avant et après, testé contre Graph</li>
+              <li>Corrections gratuites pendant 30 jours</li>
+            </ul>
+            <a class="btn" href="https://consignestudio.gumroad.com/l/remediation-courriels">Commander un outil</a>
+          </div>
+          <div class="formule">
+            <span class="nom data">Pack PME</span>
+            <div class="prix">2&nbsp;400&nbsp;€<small>HT</small></div>
+            <p class="pour">Tous les envois d'un service ou d'une PME, avant la fin du SMTP par mot de passe.</p>
+            <dl><dt>Délai</dt><dd>10 jours ouvrés</dd><dt>Taille</dt><dd>5 fichiers, 15 points d'envoi</dd><dt>Échanges</dt><dd>par écrit</dd></dl>
+            <ul>
+              <li class="plus">Tout l'outil seul, plus&nbsp;:</li>
+              <li>Une seule boîte d'envoi pour tous les fichiers</li>
+              <li>Ordre de bascule, du plus urgent (SMTP) au nouvel Outlook</li>
+              <li>Un module commun, réimporté dans chaque fichier</li>
+              <li>Fiche de déploiement de l'identifiant sur les postes</li>
+              <li>Corrections gratuites pendant 30 jours</li>
+            </ul>
+            <a class="btn plein" href="https://consignestudio.gumroad.com/l/remediation-courriels">Commander le pack</a>
+          </div>
+        </div>
+      </div>
+      <div class="conditions">
+        <div><h3 class="data">Comment ça se passe</h3><p>Diagnostic&nbsp;: vous lancez l'outil avec <code>--diagnostic</code> et vous envoyez <code>diagnostic.json</code>. Remédiation&nbsp;: vous envoyez une copie des fichiers concernés et vous recevez les fichiers corrigés. Aucun accès à vos systèmes, aucun déplacement.</p></div>
+        <div><h3 class="data">Délai garanti</h3><p>Compté à partir de la réception du fichier. S'il n'est pas tenu, la formule est remboursée en entier et le rapport vous reste.</p></div>
+        <div><h3 class="data">Ce qui n'est pas inclus</h3><p>La correction des macros au-delà de l'envoi de courriels, et les outils .NET. Un projet VB6 corrigé est livré en sources, à recompiler chez vous. Le diagnostic ne modifie jamais vos fichiers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande bloc" id="confidentialite" aria-labelledby="t-secret">
+    <div class="int">
+      <div class="tete-bloc">
+        <div><span class="folio data">Confidentialité</span><h2 class="titre" id="t-secret">Vos classeurs restent sur vos serveurs</h2></div>
+        <p>Pensé pour les DSI qui ne peuvent pas confier leurs fichiers métier à un prestataire&nbsp;: finance, RH, industrie, collectivités, santé.</p>
+      </div>
+      <div class="secret">
+        <div class="flux" role="img" aria-label="Schéma : les partages et l'outil restent sur votre réseau ; seul diagnostic.json, sans code ni auteurs, est envoyé à l'expert, qui renvoie le rapport.">
+          <svg viewBox="0 0 520 230" aria-hidden="true">
+            <rect x="1" y="1" width="250" height="228" fill="none" stroke="var(--encre)" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <text x="14" y="22" font-family="Martian Mono" font-stretch="87.5%" font-size="10" fill="var(--secondaire)" letter-spacing=".7">VOTRE RÉSEAU</text>
+            <rect x="24" y="44" width="200" height="54" fill="var(--fond)" stroke="var(--encre)" stroke-width="1.5"/>
+            <text x="38" y="68" font-family="Atkinson" font-size="15" font-weight="700" fill="var(--encre)">Partages Office</text>
+            <text x="38" y="86" font-family="Martian Mono" font-stretch="87.5%" font-size="10" fill="var(--secondaire)">LECTURE SEULE</text>
+            <line x1="124" y1="98" x2="124" y2="130" stroke="var(--encre)" stroke-width="1.5"/><path d="M118 124 L124 134 L130 124 Z" fill="var(--encre)"/>
+            <rect x="24" y="136" width="200" height="54" fill="var(--fond)" stroke="var(--encre)" stroke-width="1.5"/>
+            <text x="38" y="160" font-family="Atkinson" font-size="15" font-weight="700" fill="var(--encre)">inventaire-vba</text>
+            <text x="38" y="178" font-family="Martian Mono" font-stretch="87.5%" font-size="10" fill="var(--secondaire)">SANS RÉSEAU</text>
+            <line x1="224" y1="163" x2="372" y2="163" stroke="var(--encre)" stroke-width="1.5"/><path d="M366 157 L376 163 L366 169 Z" fill="var(--encre)"/>
+            <rect x="244" y="146" width="122" height="22" fill="var(--papier)"/>
+            <text x="305" y="161" text-anchor="middle" font-family="Martian Mono" font-stretch="87.5%" font-size="10" fill="var(--encre)">DIAGNOSTIC.JSON</text>
+            <rect x="378" y="136" width="130" height="54" fill="var(--inverse-fond)"/>
+            <text x="392" y="160" font-family="Atkinson" font-size="15" font-weight="700" fill="var(--inverse-encre)">Expert</text>
+            <text x="392" y="178" font-family="Martian Mono" font-stretch="87.5%" font-size="10" fill="var(--inverse-encre)">RELECTURE</text>
+            <path d="M443 136 V71 H232" fill="none" stroke="var(--encre)" stroke-width="1.5"/><path d="M238 65 L228 71 L238 77 Z" fill="var(--encre)"/>
+            <rect x="290" y="60" width="96" height="22" fill="var(--papier)"/>
+            <text x="338" y="75" text-anchor="middle" font-family="Martian Mono" font-stretch="87.5%" font-size="10" fill="var(--encre)">RAPPORT.PDF</text>
+          </svg>
+        </div>
+        <ul class="liste-garanties">
+          <li><b>Aucune exécution</b>L'outil décode le format des fichiers lui-même. Il n'ouvre ni Excel ni Word, ne lance aucune macro et n'ouvre aucune connexion réseau.</li>
+          <li><b>Aucun code transmis</b><code>diagnostic.json</code> ne contient ni code, ni extraits, ni auteurs, ni signataires. Avec <code>--sans-chemins</code>, ni noms de fichiers ni noms de dossiers.</li>
+          <li><b>Vérifiable avant envoi</b>L'outil écrit à côté <code>diagnostic-apercu.html</code>, qui montre exactement ce que contient le fichier.</li>
+          <li><b>Effacement</b>Le fichier reçu est supprimé 90 jours après la livraison, ou plus tôt sur simple demande.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande bloc" id="faq" aria-labelledby="t-faq">
+    <div class="int">
+      <div class="tete-bloc">
+        <div><span class="folio data">Questions</span><h2 class="titre" id="t-faq">Questions fréquentes</h2></div>
+        <p>Une autre question avant de commander&nbsp;? L'adresse de contact figure sur la page de commande.</p>
+      </div>
+      <div class="faq">
+        <div>
+          <details><summary>L'outil peut-il abîmer nos fichiers&nbsp;?</summary><p>Non. Il ouvre chaque fichier en lecture, le décode en mémoire et le referme. Il ne l'ouvre jamais dans Office, ne change ni son contenu ni sa date. Les fichiers verrouillés ou protégés sont signalés, pas forcés.</p></details>
+          <details><summary>Et les projets protégés par mot de passe&nbsp;?</summary><p>Le mot de passe VBA protège l'affichage dans l'éditeur, pas le stockage : le code est lu et analysé quand même, et le fichier est signalé comme protégé. Les fichiers chiffrés à l'ouverture sont listés à part.</p></details>
+          <details><summary>Et les bases Access&nbsp;?</summary><p>Leur code est stocké dans un format interne non documenté. Un script PowerShell fourni l'exporte depuis une copie de chaque base, macros désactivées, puis l'outil analyse l'export. L'original n'est jamais ouvert.</p></details>
+          <details><summary>Et les applications VB6 et .NET&nbsp;?</summary><p>L'outil lit les projets <code>.vbp</code> et leurs sources : composants OCX hors support, VBScript, Outlook, accès au matériel. Pour .NET, il cherche les envois de courriels et les mots de passe SMTP dans le code et les fichiers <code>.config</code>, sans analyser le reste.</p></details>
+          <details><summary>Faut-il installer quelque chose&nbsp;?</summary><p>Non avec le zip : un exécutable autonome, sans Node.js ni Python, sans droits d'administrateur. Le MSI installe dans Program Files pour un déploiement par GPO, Intune ou SCCM. L'exécutable n'est pas encore signé : Windows SmartScreen peut demander une confirmation.</p></details>
+        </div>
+        <div>
+          <details><summary>Les estimations sont-elles fiables&nbsp;?</summary><p>Ce sont des ordres de grandeur, calculés avec des coefficients publiés dans la documentation, pour un développeur VBA expérimenté. Le diagnostic Complet les ajuste fichier par fichier.</p></details>
+          <details><summary>Et si un fichier est malveillant&nbsp;?</summary><p>Les motifs classiques (téléchargement et exécution à l'ouverture) sont signalés en priorité et sortis de l'estimation : on isole un tel fichier, on ne le corrige pas. L'outil ne remplace pas un antivirus.</p></details>
+          <details><summary>Comment se passe la facturation&nbsp;?</summary><p>Paiement par carte à la commande. Le reçu fait office de facture et peut porter votre raison sociale et votre numéro de TVA. Paiement par virement sur bon de commande : sur demande écrite.</p></details>
+          <details><summary>Corrigez-vous les macros ensuite&nbsp;?</summary><p>Pour l'envoi de courriels, oui : c'est la remédiation à prix fixe. Pour le reste, le plan d'action est écrit pour que votre équipe ou votre prestataire habituel le suive. Rien ne demande de déplacement ni de formation.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bande pied">
+  <div class="int">
+    <div class="mentions">
+      <span>Consigne, studio d'outils pour développeurs et d'interfaces industrielles. <a href="__BASE__cgv.html">Conditions générales de vente du diagnostic</a> et <a href="__BASE__cgv-remediation.html">de la remédiation</a>, licence de parc : <a href="https://github.com/Consigne-Studio/inventaire-vba/blob/main/LICENCE-PARC.md">conditions de la licence</a>.</span>
+      <span><b>Mentions légales.</b> Éditeur&nbsp;: __NOM_LEGAL__, entrepreneur individuel, nom commercial Consigne, SIRET __SIRET__, __ADRESSE__, __TELEPHONE__, __EMAIL__. Directeur de la publication&nbsp;: __NOM_LEGAL__. Hébergeur&nbsp;: Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis. Cette page n'utilise ni cookie de mesure d'audience ni publicité.</span>
+      <span>Microsoft, Excel, Word, PowerPoint, Access, Outlook et Office sont des marques de Microsoft Corporation. Cet outil n'est ni affilié à Microsoft ni approuvé par Microsoft.</span>
+    </div>
+    <div class="cartouche data" aria-label="Cartouche">
+      <div><div class="k">Désignation</div><div class="v titre" style="font-size:20px">Inventaire VBA</div></div>
+      <div><div class="k">Repère</div><div class="v">DEV-607</div></div>
+      <div><div class="k">Rév.</div><div class="v">2026-10</div></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('copier').addEventListener('click', async (ev) => {
+  const b = ev.currentTarget, t = document.getElementById('commande');
+  try { await navigator.clipboard.writeText(t.textContent); b.textContent = 'Copié'; }
+  catch { const r = document.createRange(); r.selectNodeContents(t); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Sélectionné'; }
+  setTimeout(() => { b.textContent = 'Copier'; }, 1800);
+});
+</script>

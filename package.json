@@ -1,0 +1,20 @@
+{
+  "name": "inventaire-vba",
+  "version": "1.1.0",
+  "description": "Inventaire hors ligne des macros VBA d'un parc Office : ce qui casse avec Office 64 bits, les signatures V3, le nouvel Outlook et la fin de VBScript. Rapport HTML, export Excel.",
+  "type": "module",
+  "bin": { "inventaire-vba": "bin/inventaire-vba.mjs" },
+  "files": ["bin", "src", "outils", "LICENSE", "README.md", "CHANGELOG.md"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "exemple": "node scripts/exemple.mjs",
+    "construire": "node scripts/construire.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.2",
+    "postject": "1.0.0-alpha.6"
+  },
+  "keywords": ["vba", "macro", "excel", "office", "inventaire", "64-bit", "ptrsafe", "vbscript", "signature-v3", "migration"],
+  "license": "MIT"
+}

